@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="crema">#E6CE87</color>
+    <color name="pistache">#BFEB96</color>
+    <color name="amarillo">#FFFBB5</color>
+    <color name="lila">#E6CEED</color>
+    <color name="azulcielo">#93E0ED</color>
+    <color name="verdeOlivo">#3E4A33</color>
+</resources>

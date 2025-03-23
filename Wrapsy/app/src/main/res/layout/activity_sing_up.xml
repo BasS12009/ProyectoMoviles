@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E1E"
+    android:orientation="vertical"
+    tools:context=".SingUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FDF6E3"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@string/app_name"
+            android:src="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Welcome to Wrapsy"
+            android:textColor="#4D5F41"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="20dp"
+            android:text="Sign up to start"
+            android:textColor="#4D5F41"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="295dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#E3F6C6"
+            android:hint="Your name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:textColorHint="#4D5F41"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#E3F6C6"
+            android:hint="Username"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColorHint="#4D5F41"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="291dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#E3F6C6"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColorHint="#4D5F41"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#E3F6C6"
+            android:hint="Phone number"
+            android:inputType="phone"
+            android:padding="12dp"
+            android:textColorHint="#4D5F41"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#E3F6C6"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColorHint="#4D5F41"
+            android:textSize="14sp" />
+
+        <EditText
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#E3F6C6"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColorHint="#4D5F41"
+            android:textSize="14sp" />
+
+        <Button
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#707B65"
+            android:text="Confirm"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</LinearLayout>
