@@ -1,67 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E1E1E"
-    android:orientation="vertical"
-    tools:context=".LogIn">
+    android:background="#FFFDEB">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FDF6E3"
-        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp">
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
 
         <ImageView
-            android:layout_width="50dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src=""
+            android:layout_marginTop="40dp"
+            android:contentDescription="Logo" />
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome  back to"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#3E3E3E"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/tvWrapsy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wrapsy"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#3E3E3E" />
+
+        <TextView
+            android:id="@+id/tvLoginText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log in to start"
+            android:textSize="16sp"
+            android:textColor="#3E3E3E"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="30dp"
-            android:contentDescription="@string/app_name"
-            android:src="" />
+            android:hint="Enter your email"
+            android:background="#E3F6C6"
+            android:padding="12dp"
+            android:layout_marginTop="32dp"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:background="#E3F6C6"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Welcome back to Wrapsy"
-            android:textColor="#4D5F41"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="16dp"
+            android:text="Don’t have an account? "
+            android:textColor="#3E3E3E"
+            android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/tvSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="20dp"
-            android:text="Log in to start"
-            android:textColor="#4D5F41"
+            android:text="Sign up"
+            android:textColor="#3E3E3E"
             android:textSize="14sp" />
 
-        <EditText
-            android:layout_width="295dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#E3F6C6"
-            android:hint="Enter your email"
-            android:inputType="textPersonName"
-            android:padding="12dp"
-            android:textColorHint="#4D5F41"
-            android:textSize="14sp" />
+        <Button
+            android:id="@+id/btnFacebook"
+            android:layout_width="309dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#E3F6C6"
+            android:drawableLeft=""
+            android:paddingLeft="40dp"
+            android:text="Use Facebook"
+            android:textColor="#3E3E3E" />
 
-        <EditText
-            android:layout_width="293dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="#E3F6C6"
-            android:hint="Password"
-            android:inputType="text"
-            android:padding="12dp"
-            android:textColorHint="#4D5F41"
-            android:textSize="14sp" />
+        <Button
+            android:id="@+id/btnGmail"
+            android:layout_width="309dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#E3F6C6"
+            android:drawableLeft=""
+            android:paddingLeft="40dp"
+            android:text="Use Gmail"
+            android:textColor="#3E3E3E" />
 
         <Button
             android:layout_width="138dp"
@@ -71,14 +112,5 @@
             android:text="Confirm"
             android:textColor="#FFFFFF" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="20dp"
-            android:text="Don’t have an account? Sign up "
-            android:textColor="#4D5F41"
-            android:textSize="14sp" />
-
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

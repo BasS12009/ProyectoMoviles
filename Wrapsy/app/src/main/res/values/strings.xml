@@ -1,3 +1,37 @@
 <resources>
+    <!-- Pantalla de Login -->
+    <string name="welcome_back">Welcome back to</string>
+    <string name="wrapsy">Wrapsy</string>
+    <string name="login_to_start">Log in to start</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="hint_password">Password</string>
+    <string name="dont_have_account">Don’t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="use_facebook">Use Facebook</string>
+    <string name="use_gmail">Use Gmail</string>
+    <string name="confirm">Confirm</string>
+
+    <!-- Pantalla Main -->
     <string name="app_name">Wrapsy</string>
+    <string name="slogan">Slogan</string>
+    <string name="btn_sign_up">Sign up</string>
+
+    <!-- Pantalla SingUp -->
+    <string name="signup_welcome">Welcome to Wrapsy</string>
+    <string name="signup_subtitle">Sign up to start</string>
+    <string name="hint_name">Your name</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_phone">Phone number</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_log_in">Log in</string>
+
+    <!-- Pantalla Sign up Address -->
+    <string name="address_title">Address</string>
+    <string name="hint_country">Country</string>
+    <string name="hint_state">State</string>
+    <string name="hint_city">City</string>
+    <string name="hint_zip">Zip</string>
+    <string name="hint_full_address">Address</string>
+    <string name="btn_continue">Continue</string>
 </resources>
