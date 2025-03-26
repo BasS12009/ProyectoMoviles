@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src=""
+            android:src="@drawable/icono_wrapsy"
             android:layout_marginTop="40dp"
             android:contentDescription="Logo" />
 
@@ -88,7 +88,6 @@
             android:layout_height="50dp"
             android:layout_marginTop="24dp"
             android:backgroundTint="#E3F6C6"
-            android:drawableLeft=""
             android:paddingLeft="40dp"
             android:text="Use Facebook"
             android:textColor="#3E3E3E" />
@@ -99,7 +98,6 @@
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="#E3F6C6"
-            android:drawableLeft=""
             android:paddingLeft="40dp"
             android:text="Use Gmail"
             android:textColor="#3E3E3E" />

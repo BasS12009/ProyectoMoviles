@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#E6CEED"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/iv_favorites"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icono_wrapsy"
+        android:layout_alignParentStart="true"
+        android:layout_margin="12dp" />
+
+
+    <ImageView
+        android:id="@+id/iv_notifications"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/circleyellow"
+        android:padding="8dp"
+        android:src="@drawable/ic_notificaciones" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Purcharse History"
+        android:textColor="#333333"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@id/iv_favorites"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp">
+
+        <Button
+            android:id="@+id/btn_purchase_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background=""
+            android:text="Gift for Walter White - 23/03/25
+                              Card ending in - 9843"
+            android:textColor="#000000"
+            android:drawableEnd=""
+            android:gravity="center_vertical|start"
+            android:padding="16dp" />
+
+        <Button
+            android:id="@+id/btn_payment_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background=""
+            android:text="Gift Purchase: Puma Cap - 10/03/25
+                                Card ending in - 9843"
+            android:textColor="#000000"
+            android:drawableEnd=""
+            android:gravity="center_vertical|start"
+            android:padding="16dp"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btn_about_us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background=""
+            android:text="GIFT CARD $100 purchase - 01/03/25
+                          Card ending in - 9843"
+            android:textColor="#000000"
+            android:drawableEnd=""
+            android:gravity="center_vertical|start"
+            android:padding="16dp"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#B6E388"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stores"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:src="@drawable/ic_store"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orders"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:src="@drawable/ic_orders"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coupons"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:src="@drawable/ic_coupon"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:src="@drawable/ic_profile"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

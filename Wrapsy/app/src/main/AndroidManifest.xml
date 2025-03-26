@@ -12,7 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wrapsy"
         tools:targetApi="31">
-
+        <activity
+            android:name=".AboutUs"
+            android:exported="false" />
+        <activity
+            android:name=".MoreOptionspaymentOptions"
+            android:exported="false" />
+        <activity
+            android:name=".moreOptionspurchaseHistory"
+            android:exported="false" />
+        <activity
+            android:name=".moreOptions"
+            android:exported="false" />
         <activity
             android:name=".GiftQuizStep3Activity"
             android:exported="false" />

@@ -7,14 +7,7 @@
     android:orientation="vertical"
     tools:context=".SingUpAdress">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="10dp"
-        android:text="Address"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +23,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:contentDescription="@string/app_name"
-            android:src="" />
+            android:src="@drawable/icono_wrapsy" />
 
         <TextView
             android:layout_width="wrap_content"
