@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfectGiftQuizActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/pistache">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icono_wrapsy"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wraspy"
+        android:textStyle="bold"
+        android:textSize="32sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you want to take the\nquiz for your perfect gift?"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"/>
+
+    <Button
+        android:id="@+id/btnYes"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/verdeOlivo"
+        app:cornerRadius="8dp"
+        android:text="Yes"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnSkip"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/amarillo"
+        app:cornerRadius="8dp"
+        android:text="Skip"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+
+
+</LinearLayout>

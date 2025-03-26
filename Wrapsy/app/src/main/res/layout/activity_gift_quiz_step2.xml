@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cremaPalido"
+    android:orientation="vertical"
+    android:padding="3dp"
+    tools:context=".GiftQuizStep2Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icono_wrapsy" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="30dp"
+            android:text="All the information you provide is protected,\nand only you and your friends will be able to see it."
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complete it in just 3 steps!"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="For what occasion is the gift?"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btnOccasion1"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="Birthday"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="left"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+            <Button
+                android:id="@+id/btnOccasion2"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="Anniversary"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+            <Button
+                android:id="@+id/btnOccasion3"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="Holiday"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="left"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+            <Button
+                android:id="@+id/btnOccasion4"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="No special occasion"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select your favorite color."
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btnBlue"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="Blue"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="left"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+            <Button
+                android:id="@+id/btnRed"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="Red"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+            <Button
+                android:id="@+id/btnPink"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="Pink"
+                android:textColor="@color/pink"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="left"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+            <Button
+                android:id="@+id/btnOrange"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="Orange"
+                android:textColor="@color/orange"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+            <Button
+                android:id="@+id/btnPurple"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="Purple"
+                android:textColor="@color/purple"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="left"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+            <Button
+                android:id="@+id/btnBlack"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/verdePastelSuave"
+                android:text="Black"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                android:layout_gravity="right"
+                android:layout_marginBottom="3dp"
+                android:padding="3dp"/>
+
+        </GridLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="40dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="30dp"
+            android:backgroundTint="@color/amarilloClaroPastel"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="8dp" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/verdeOlivaGrisaceo"
+            android:text="Next 2/3"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+
+</LinearLayout>
