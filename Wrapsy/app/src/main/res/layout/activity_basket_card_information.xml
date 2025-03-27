@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="3dp"
     android:orientation="vertical"
+    android:padding="3dp"
     android:background="@color/cremaPalido"
-    tools:context=".ChooseCardActivity">
+    tools:context=".BasketCardInformationActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,8 +17,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="30dp"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,84 +53,34 @@
                     android:layout_margin="8dp"/>
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_wrapsy"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Card"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="40dp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_margin="20dp"
-                android:background="@color/lila">
+                android:gravity="center_horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cardholder"
-                    android:textSize="14sp"
-                    android:textColor="#3D3D3D" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cardholder"
-                    android:textSize="16sp"
-                    android:textColor="#3D3D3D"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Card Numbers"
-                    android:textSize="14sp"
-                    android:textColor="#3D3D3D" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/card_numbers"
-                    android:textSize="16sp"
-                    android:textColor="#3D3D3D"
-                    android:textStyle="bold" />
-
+                <include layout="@layout/card_information_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
-
-
             <androidx.cardview.widget.CardView
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="140dp"
+                android:layout_marginTop="10dp"
                 app:cardCornerRadius="8dp"
                 android:layout_marginBottom="20dp"
                 app:cardElevation="0dp">
 
                 <TextView
-                    android:id="@+id/add_card_button"
+                    android:id="@+id/confirm_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/verdeOlivaGrisaceo"
                     android:gravity="center"
                     android:padding="16dp"
-                    android:text="Add card"
+                    android:text="Confirm"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
             </androidx.cardview.widget.CardView>
