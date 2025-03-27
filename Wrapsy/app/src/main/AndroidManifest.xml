@@ -13,11 +13,17 @@
         android:theme="@style/Theme.Wrapsy"
         tools:targetApi="31">
         <activity
+            android:name=".ChooseCardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BasketActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileListInfoActivity"
             android:exported="false" />
         <activity
             android:name=".profileNewList"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".PlantillaStoreActivity"
             android:exported="false" />

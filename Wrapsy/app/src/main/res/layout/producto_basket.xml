@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+        <ImageView
+            android:id="@+id/image_producto_basket"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/velvet_lipstick"/>
+        <!-- Texto del producto -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:id="@+id/titulo_producto_basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anastasia Beverly Hills"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/descripcion_producto_basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lip velvet liquid lipstick"
+                android:textSize="10sp"
+                android:layout_gravity="start"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/precio_producto_basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="300"
+                android:textSize="17sp"
+                android:layout_gravity="start"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/delete_button_basket"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            app:srcCompat="@drawable/ic_delete" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -2,11 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_cream"
     android:orientation="vertical"
-    tools:context=".SaveItemActivity">
+    android:background="@color/cremaPalido"
+    tools:context=".BasketActivity">
 
     <!-- Barra superior con iconos -->
     <RelativeLayout
@@ -51,22 +52,20 @@
             android:contentDescription="Menu" />
     </RelativeLayout>
 
-    <!-- Contenido principal -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <!-- Logo -->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
             android:orientation="vertical"
-            android:gravity="center">
-
+            android:gravity="center"
+            android:padding="20dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="40dp"
+                >
 
                 <ImageView
                     android:layout_width="60dp"
@@ -74,56 +73,42 @@
                     android:layout_gravity="center"
                     android:contentDescription="Logo"
                     android:src="@drawable/ic_wrapsy" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Basket"
+                    android:textColor="@color/dark_green"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
+            <GridView
+                android:id="@+id/productos_catalogo"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:numColumns="1"
+                android:paddingHorizontal="6dp"
+                android:scrollbars="vertical"/>
+            <Button
+                android:id="@+id/btn_pay_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/app_name"
-                android:textColor="@color/dark_green"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:text="Pay for the order"
+                android:layout_marginTop="18dp"
+                android:backgroundTint="@color/verdeOlivaGrisaceo"
+                app:cornerRadius="8dp"/>
 
-        <!-- Botones -->
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/green_rounded_background_card"
-            android:paddingBottom="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Save Item"
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:padding="16dp"/>
-
-            <Button
-                android:id="@+id/btn_wishlist"
-                style="@style/WrapsyPurpleButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/wishlist"
-                android:layout_marginHorizontal="16dp"/>
-
-            <Button
-                android:id="@+id/btn_list"
-                android:layout_marginTop="4dp"
-                style="@style/WrapsyPurpleButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/list"
-                android:layout_marginHorizontal="16dp"/>
 
         </LinearLayout>
-    </LinearLayout>
+
+
+
+
     <include
         android:layout="@layout/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
 </LinearLayout>
