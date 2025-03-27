@@ -16,6 +16,7 @@ open class BaseActivity : AppCompatActivity() {
                 R.id.nav_stores -> {
                     if(this !is StoresActivity) {
                         startActivity(Intent(this, StoresActivity::class.java))
+                        startActivity(Intent(this, PlantillaStoreActivity::class.java))
                     }
                     true
                 }
