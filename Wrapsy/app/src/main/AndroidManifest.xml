@@ -22,7 +22,13 @@
             android:name=".ShareWithFriendsActivity"
             android:exported="false" />
         <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".OrderDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profilelists"
             android:exported="false" />
         <activity
             android:name=".ProfileEditProfile"
