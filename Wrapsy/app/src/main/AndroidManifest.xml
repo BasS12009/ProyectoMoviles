@@ -16,6 +16,9 @@
             android:name=".OrdersActivity"
             android:exported="false" />
         <activity
+            android:name=".SaveItemMyListsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SaveItemActivity"
             android:exported="false" />
         <activity
