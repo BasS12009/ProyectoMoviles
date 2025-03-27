@@ -34,7 +34,7 @@
                     android:background="@drawable/circleyellow"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_notificaciones"
+                    android:src="@drawable/ic_shopping_basket"
                     android:contentDescription="Shopping basket" />
 
                 <ImageView
@@ -58,7 +58,7 @@
                     android:layout_toStartOf="@id/menuIcon"
                     android:layout_centerVertical="true"
                     android:background="@drawable/circleyellow"
-                    android:src="@drawable/ic_notificaciones"
+                    android:src="@drawable/ic_tres_rayitas"
                     android:contentDescription="Options" />
             </RelativeLayout>
 
@@ -117,9 +117,8 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginLeft="16dp"
-                            android:background="@drawable/circleblue"
                             android:padding="4dp"
-                            android:src="@drawable/ic_store" />
+                            android:src="@drawable/heisenberg_plush" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -198,9 +197,8 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginLeft="16dp"
-                            android:background="@drawable/circleblue"
                             android:padding="4dp"
-                            android:src="@drawable/ic_store" />
+                            android:src="@drawable/flores_tejidas" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -260,9 +258,8 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginLeft="16dp"
-                            android:background="@drawable/circleblue"
                             android:padding="4dp"
-                            android:src="@drawable/ic_store" />
+                            android:src="@drawable/fresitas_tqm" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
