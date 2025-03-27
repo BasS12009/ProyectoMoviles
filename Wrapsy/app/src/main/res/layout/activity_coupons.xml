@@ -312,6 +312,9 @@
 
 
     </GridLayout>
-
+    <include
+        android:layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
