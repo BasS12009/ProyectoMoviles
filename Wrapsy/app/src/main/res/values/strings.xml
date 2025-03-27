@@ -89,4 +89,10 @@
     <string name="store_balloons">Balloons ></string>
     <string name="store_plush_toys">Plush toys ></string>
     <string name="store_mugs">Mugs ></string>
+
+    <!-- Pantalla activity_producto_details -->
+    <string name="save_item_link">Save item</string>
+    <string name="item_rating">Rating</string>
+    <string name="comments">Comments</string>
+    <string name="add_to_basket">Add to basket</string>
 </resources>
