@@ -42,19 +42,6 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/facebook_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#E3F6C6"
-            android:drawableLeft=""
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="Use Facebook"
-            android:textAllCaps="false"
-            android:textColor="#4D5F41" />
-
-        <Button
             android:id="@+id/gmail_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +52,9 @@
             android:paddingEnd="16dp"
             android:text="Use Gmail"
             android:textAllCaps="false"
-            android:textColor="#4D5F41" />
+            android:textColor="#4D5F41"
+            android:layout_marginBottom="20dp"
+            />
 
         <TextView
             android:id="@+id/login_link"
@@ -74,7 +63,9 @@
             android:layout_marginTop="10dp"
             android:text="Already have an account? Log in"
             android:textColor="#FF000000"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:layout_marginBottom="15dp"
+            />
         <EditText
             android:layout_width="295dp"
             android:layout_height="wrap_content"
