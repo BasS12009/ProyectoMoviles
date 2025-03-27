@@ -6,17 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StoresActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/cremaPalido">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="papoi"/>
+            android:layout_height="0dp"
+            android:orientation="vertical">
+
+            <!--Contenido-->
+
+        </LinearLayout>
+
 
     </ScrollView>
 
