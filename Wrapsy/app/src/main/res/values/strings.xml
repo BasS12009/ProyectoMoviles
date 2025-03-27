@@ -34,4 +34,18 @@
     <string name="hint_zip">Zip</string>
     <string name="hint_full_address">Address</string>
     <string name="btn_continue">Continue</string>
+
+    <!-- Pantalla Save Item -->
+    <string name="save_item">Save item</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="list">List</string>
+    <string name="my_lists">My Lists</string>
+    <string name="see_later">See later</string>
+    <string name="christmas_2025">Christmas 2025</string>
+    <string name="offers">Offers</string>
+    <string name="stores">Stores</string>
+    <string name="orders">Orders</string>
+    <string name="coupons">Coupons</string>
+    <string name="profile">Profile</string>
+
 </resources>
