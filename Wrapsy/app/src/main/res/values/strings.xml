@@ -100,4 +100,7 @@
     <string name="item_rating">Rating</string>
     <string name="comments">Comments</string>
     <string name="add_to_basket">Add to basket</string>
+
+    <string name="cardholder">John Felix Anthony cena</string>
+    <string name="card_numbers">**** **** **** 9843</string>
 </resources>
