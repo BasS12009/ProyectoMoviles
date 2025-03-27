@@ -181,7 +181,7 @@
             app:cornerRadius="8dp" />
 
         <Button
-            android:id="@+id/btnDone"
+            android:id="@+id/btnNext3_3"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:backgroundTint="@color/verdeOlivaGrisaceo"

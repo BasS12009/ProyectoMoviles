@@ -13,9 +13,33 @@
         android:theme="@style/Theme.Wrapsy"
         tools:targetApi="31">
         <activity
+            android:name=".ReviewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SendInviteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShareWithFriendsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrderDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profilelists"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileEditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
             android:name=".RecommendedGiftsActivity"
             android:exported="false" />
-        <activity    
+        <activity
             android:name=".StoresActivity"
             android:exported="false" />
         <activity
