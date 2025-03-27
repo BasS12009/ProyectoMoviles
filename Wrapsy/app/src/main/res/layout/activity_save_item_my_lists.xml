@@ -60,7 +60,7 @@
                 android:padding="16dp"/>
 
             <Button
-                android:id="@+id/btn_wishlist"
+                android:id="@+id/btn_seelater"
                 style="@style/WrapsyPurpleButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                 android:layout_marginHorizontal="16dp"/>
 
             <Button
-                android:id="@+id/btn_list"
+                android:id="@+id/btn_christmas"
                 android:layout_marginTop="4dp"
                 style="@style/WrapsyPurpleButton"
                 android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                 android:text="Christmas 2025 🎄"
                 android:layout_marginHorizontal="16dp"/>
             <Button
-                android:id="@+id/btn_list"
+                android:id="@+id/btn_offers"
                 android:layout_marginTop="4dp"
                 style="@style/WrapsyPurpleButton"
                 android:layout_width="match_parent"
