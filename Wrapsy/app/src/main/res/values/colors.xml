@@ -8,7 +8,7 @@
     <color name="orange">#FF7543</color>
     <color name="purple">#9C27B0</color>
     <color name="crema">#E6CE87</color>
-    <color name="pistache">#BFEB96</color>
+    <color name="pistache">#A9D77E</color>
     <color name="amarillo">#FFFBB5</color>
     <color name="lila">#E6CEED</color>
     <color name="azulcielo">#93E0ED</color>
@@ -18,4 +18,8 @@
     <color name="verdeOlivaGrisaceo">#788069</color>
     <color name="verdePastelSuave">#deefc0</color>
     <color name="lilablanco">#eaddee</color>
+    <color name="background_cream">#FFFBE6</color>
+    <color name="purple_button">#BD9AC8</color>
+    <color name="dark_green">#4A5D41</color>
+    <color name="bottom_nav_green">#B8D8A0</color>
 </resources>
