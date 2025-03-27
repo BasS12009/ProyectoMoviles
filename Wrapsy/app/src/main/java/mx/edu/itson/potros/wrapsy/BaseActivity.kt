@@ -16,27 +16,28 @@ open class BaseActivity : AppCompatActivity() {
                 R.id.nav_stores -> {
                     if(this !is StoresActivity) {
                         startActivity(Intent(this, StoresActivity::class.java))
+                        startActivity(Intent(this, PlantillaStoreActivity::class.java))
                     }
                     true
                 }
 
                 R.id.nav_orders -> {
-                    if(this !is BaseActivity) {
-                        startActivity(Intent(this, MainActivity::class.java))
+                    if(this !is OrdersActivity) {
+                        startActivity(Intent(this, OrdersActivity::class.java))
                     }
                     true
                 }
 
                 R.id.nav_coupons -> {
-                    if(this !is BaseActivity) {
-                        startActivity(Intent(this, MainActivity::class.java))
+                    if(this !is CouponsActivity) {
+                        startActivity(Intent(this, CouponsActivity::class.java))
                     }
                     true
                 }
 
                 R.id.nav_profile -> {
-                    if(this !is BaseActivity) {
-                        startActivity(Intent(this, MainActivity::class.java))
+                    if(this !is ProfileActivity) {
+                        startActivity(Intent(this, ProfileActivity::class.java))
                     }
                     true
                 }

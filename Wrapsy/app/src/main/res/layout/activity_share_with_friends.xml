@@ -143,10 +143,10 @@
                 android:id="@+id/cancel_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#7D8779"
+                android:background="@color/verdeOlivaGrisaceo"
                 android:gravity="center"
                 android:padding="16dp"
-                android:text="Cancel"
+                android:text="@string/cancel_btn"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
