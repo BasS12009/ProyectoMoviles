@@ -58,9 +58,6 @@
             android:name=".RecommendedGiftsActivity"
             android:exported="false" />
         <activity
-            android:name=".StoresActivity"
-            android:exported="false" />
-        <activity
             android:name=".OrdersActivity"
             android:exported="false" />
         <activity
@@ -112,7 +109,7 @@
             android:name=".SingUp"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".StoresActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
