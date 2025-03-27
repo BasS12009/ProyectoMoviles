@@ -72,5 +72,12 @@
     <!-- Pantalla notificaciones-->
     <string name="notify">Sale on AMAZON, wachale!!!</string>
 
+    <!-- Pantalla info lista-->
+    <string name="titulo_lista">See later</string>
+    <string name="titulo_lista2">My list</string>
+    <string name="buy_btn">Buy</string>
+
+    <string name="nombre_variable">Razer Audifonos</string>
+
 
 </resources>
