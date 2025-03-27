@@ -55,7 +55,7 @@
                     android:background="@drawable/circleyellow"
                     android:contentDescription="Options"
                     android:padding="8dp"
-                    android:src="@drawable/ic_notificaciones" />
+                    android:src="@drawable/ic_tres_rayitas" />
             </RelativeLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,11 +154,11 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/regalo_zapato_ballet"/>
+                        android:src="@drawable/bizu_maquillaje"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Zapatos Ballet"
+                            android:text="Sombras"
                         android:textSize="12sp"
                         android:textColor="#4C4C4C"/>
 
@@ -244,12 +244,12 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/regalo_princesa_ariel" />
+                        android:src="@drawable/arcane_gloss_bomb" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Princesa Ariel"
+                        android:text="Gloss Bomb"
                         android:textSize="12sp"
                         android:textColor="#4C4C4C" />
 
@@ -264,12 +264,12 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/regalo_under_armour" />
+                        android:src="@drawable/arcane_mel_gold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Under Armour Ro"
+                        android:text="Perfume Mel"
                         android:textSize="12sp"
                         android:textColor="#4C4C4C" />
 

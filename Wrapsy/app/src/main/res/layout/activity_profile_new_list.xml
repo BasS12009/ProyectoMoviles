@@ -1,0 +1,166 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:orientation="vertical"
+android:background="#FFFEE8"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ProfileEditProfile">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/basketIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:contentDescription="Shopping basket"
+                android:padding="8dp"
+                android:src="@drawable/ic_wrapsy" />
+
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/circleyellow"
+                android:contentDescription="Menu"
+                android:padding="8dp"
+                android:src="@drawable/ic_notificaciones" />
+
+            <ImageView
+                android:id="@+id/options"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="1dp"
+                android:layout_toStartOf="@id/menuIcon"
+                android:background="@drawable/circleyellow"
+                android:contentDescription="Options"
+                android:padding="8dp"
+                android:src="@drawable/ic_tres_rayitas" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="NEW LIST"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#4C4C4C" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="#D8E9C9"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="List name:"
+                android:textSize="18sp"
+                android:textColor="#4C4C4C" />
+
+            <EditText
+                android:id="@+id/list_name_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name here..."
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_backkground_white"
+                android:padding="12dp" />
+
+            <ImageView
+                android:id="@+id/list_item_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/regalo_under_armour"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/list_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Under Armour"
+                android:textSize="16sp"
+                android:textColor="#4C4C4C"
+                android:layout_marginTop="8dp" />
+
+
+
+            <Button
+                android:id="@+id/add_button"
+                android:layout_width="152dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/amarilloClaroPastel"
+                android:text="Add"
+                android:layout_gravity="center"
+                android:textColor="#4C4C4C" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bottom_nav"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#707B65"
+                android:layout_marginTop="70dp"
+                android:text="New list"
+                android:textColor="#FFFFFFFF" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+<include
+    android:layout="@layout/bottom_navigation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true" />
+
+</LinearLayout>
