@@ -47,18 +47,19 @@
                     android:layout_centerVertical="true"
                     android:background="@drawable/circleyellow"
                     android:src="@drawable/ic_notificaciones"
-                    android:contentDescription="Notifications" />
+                    android:contentDescription="Menu" />
 
                 <ImageView
                     android:id="@+id/options"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_margin="5dp"
+                    android:layout_margin="1dp"
                     android:padding="8dp"
+                    android:layout_toStartOf="@id/btn_notificaciones"
                     android:layout_centerVertical="true"
                     android:background="@drawable/circleyellow"
                     android:src="@drawable/ic_tres_rayitas"
-                    android:contentDescription="Menu" />
+                    android:contentDescription="Options" />
             </RelativeLayout>
 
 
