@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wrapsy"
         tools:targetApi="31">
-
+        <activity
+            android:name=".StoresActivity"
+            android:exported="false" />
         <activity
             android:name=".GiftQuizStep3Activity"
             android:exported="false" />
