@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Wrapsy"
         tools:targetApi="31">
         <activity
+            android:name=".CardInformationAddCardActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChooseCardActivity"
             android:exported="false" />
         <activity
@@ -55,9 +58,6 @@
             android:name=".RecommendedGiftsActivity"
             android:exported="false" />
         <activity
-            android:name=".StoresActivity"
-            android:exported="false" />
-        <activity
             android:name=".OrdersActivity"
             android:exported="false" />
         <activity
@@ -91,7 +91,7 @@
             android:name=".GiftQuizStep2Activity"
             android:exported="false" />
         <activity
-            android:name=".GiftQuizActivity"
+            android:name=".GiftQuizEndActivity"
             android:exported="false" />
         <activity
             android:name=".GiftQuizStep1Activity"
@@ -109,7 +109,7 @@
             android:name=".SingUp"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".StoresActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

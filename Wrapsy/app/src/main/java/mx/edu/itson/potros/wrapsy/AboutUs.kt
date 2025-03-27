@@ -14,6 +14,8 @@ class AboutUs : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about_us)
 
+
+
         val btnMenuIcon:ImageView = findViewById<ImageView>(R.id.menuIcon)
 
         btnMenuIcon.setOnClickListener(){
