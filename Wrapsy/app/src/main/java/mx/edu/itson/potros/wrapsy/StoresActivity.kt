@@ -11,9 +11,9 @@ class StoresActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stores)
 
-        val btnBasket: ImageButton = findViewById(R.id.btn_basket)
-        val btnNotification:ImageButton = findViewById(R.id.btn_notificaciones)
-        val btnMoreOption:ImageButton = findViewById(R.id.btn_more_options)
+        val btnBasket: ImageView = findViewById(R.id.basketIcon)
+        val btnNotification:ImageView = findViewById(R.id.btn_notificaciones)
+        val btnMoreOption:ImageView = findViewById(R.id.options)
 
         btnBasket.setOnClickListener(){
             val intent = Intent(this, BasketActivity::class.java)
