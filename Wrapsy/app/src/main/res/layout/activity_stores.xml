@@ -60,6 +60,142 @@
                     android:layout_margin="8dp"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_wrapsy"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gifts"
+                    android:textStyle="bold"
+                    android:textSize="32sp"/>
+
+                <TextView
+                    android:id="@+id/tv_filters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filters"
+                    android:textColor="@color/blue"
+                    android:textColorLink="@color/blue"
+                    android:autoLink="web"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="10dp"/>
+
+                <!--Search bar-->
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="3dp"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="15dp"
+                    >
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/search"
+                        android:background="@null"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_search"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp">
+
+                    <Button
+                        android:id="@+id/btn_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/store_details"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:textColor="@color/amarillo_dorado"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@android:color/transparent"/>
+
+                    <GridView
+                        android:id="@+id/gv_productos_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="3"
+                        android:paddingHorizontal="6dp"/>
+
+                    <Button
+                        android:id="@+id/btn_balloons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/store_balloons"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:textColor="@color/amarillo_dorado"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@android:color/transparent"/>
+
+                    <GridView
+                        android:id="@+id/gv_productos_balloons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="3"
+                        android:paddingHorizontal="6dp"/>
+
+                    <Button
+                        android:id="@+id/btn_plush_toys"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/store_plush_toys"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:textColor="@color/amarillo_dorado"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@android:color/transparent"/>
+
+                    <GridView
+                        android:id="@+id/gv_productos_plush_toys"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="3"
+                        android:paddingHorizontal="6dp"/>
+
+                    <Button
+                        android:id="@+id/btn_mugs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/store_mugs"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:textColor="@color/amarillo_dorado"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@android:color/transparent"/>
+
+                    <GridView
+                        android:id="@+id/gv_productos_mugs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="3"
+                        android:paddingHorizontal="6dp"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
 
 

@@ -1,7 +1,9 @@
 <resources>
+    <!-- Recursos comunes -->
+    <string name="wrapsy">Wrapsy</string>
+
     <!-- Pantalla de Login -->
     <string name="welcome_back">Welcome back to</string>
-    <string name="wrapsy">Wrapsy</string>
     <string name="login_to_start">Log in to start</string>
     <string name="hint_email">Enter your email</string>
     <string name="hint_password">Password</string>
@@ -79,5 +81,12 @@
 
     <string name="nombre_variable">Razer Audifonos</string>
 
-
+    <!-- Pantalla activity_stores -->
+    <string name="gifts">Gifts</string>
+    <string name="filters">Filters</string>
+    <string name="search">Search</string>
+    <string name="store_details">Details ></string>
+    <string name="store_balloons">Balloons ></string>
+    <string name="store_plush_toys">Plush toys ></string>
+    <string name="store_mugs">Mugs ></string>
 </resources>
