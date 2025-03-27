@@ -70,7 +70,6 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_below="@id/iv_favorites"
         android:layout_marginTop="60dp"
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"

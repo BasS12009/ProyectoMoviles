@@ -115,10 +115,6 @@
 
     </ScrollView>
 
-
-
-
-
     <include
         android:layout="@layout/bottom_navigation"
         android:layout_width="match_parent"

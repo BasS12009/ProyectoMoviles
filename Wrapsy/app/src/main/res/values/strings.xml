@@ -100,4 +100,58 @@
     <string name="item_rating">Rating</string>
     <string name="comments">Comments</string>
     <string name="add_to_basket">Add to basket</string>
+
+    <!-- Pantalla activity_profile -->
+    <string name="app__name">MiAplicacion</string>
+    <string name="shopping_basket">Shopping basket</string>
+    <string name="menu">Menu</string>
+    <string name="options">Options</string>
+    <string name="john_felix">John Felix</string>
+    <string name="lists">Lists</string>
+    <string name="share_with_friends">Share with friends</string>
+    <string name="wishlistt">WHISHLIST</string>
+    <string name="sombras">Sombras</string>
+    <string name="princesa_ariel">Princesa Ariel</string>
+    <string name="under_armour_ro">Under Armour Ro</string>
+    <string name="muneco_lego">Muñeco lego</string>
+    <string name="gloss_bomb">Gloss Bomb</string>
+    <string name="perfume_mel">Perfume Mel</string>
+
+    <!-- Pantalla activity_profile_edit_profile -->
+    <string name="profile_picture">Profile picture:</string>
+    <string name="upload_file">Upload file...</string>
+    <string name="username">Username:</string>
+    <string name="edit">edit</string>
+    <string name="save_changes">Save changes</string>
+
+
+    <!-- Pantalla activity_profile_new_list -->
+    <string name="new_list_title">NEW LIST</string>
+    <string name="list_name">List name:</string>
+    <string name="name_here">Name here...</string>
+    <string name="under_armour">Under Armour</string>
+    <string name="add">Add</string>
+    <string name="new_list_button">New list</string>
+
+    <!-- Pantalla activity_profildlists-->
+    <string name="flores_tejidas">Flores tejidas</string>
+    <string name="pomada">Pomada</string>
+    <string name="new_list">New list</string>
+
+    <!-- Pantalla activity_more_options-->
+    <string name="purchase_history">Purchase History</string>
+    <string name="payment_options">Payment Options</string>
+    <string name="about_us">About Us</string>
+    <string name="log_out">Log out</string>
+
+    <!-- Pantalla activity_more_optionspayment_options-->
+    <string name="payments_options">Payments Options</string>
+    <string name="card_information">Card Information</string>
+    <string name="card_number">Card Number</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="mm_yy">MM/YY</string>
+    <string name="cvv">CVV</string>
+
+    
+
 </resources>

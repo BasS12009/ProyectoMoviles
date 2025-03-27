@@ -24,7 +24,16 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp">
 
-
+                <ImageView
+                    android:id="@+id/basketIcon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:contentDescription="Shopping basket"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_wrapsy" />
 
                 <ImageView
                     android:id="@+id/menuIcon"
