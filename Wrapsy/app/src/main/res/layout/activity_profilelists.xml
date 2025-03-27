@@ -1,41 +1,361 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
     android:background="#FFFEE8"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ProfileEditProfile">
 
-    <ImageView
-        android:id="@+id/iv_favorites"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_margin="12dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="12dp"
-        android:src="@drawable/ic_wrapsy" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/iv_notifications"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:background="@drawable/circleyellow"
-        android:padding="8dp"
-        android:src="@drawable/ic_notificaciones" />
+                <ImageView
+                    android:id="@+id/basketIcon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:contentDescription="Shopping basket"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_wrapsy" />
 
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="#707B65"
-        android:text="New List"
-        android:textColor="#FFFFFFFF" />
+                <ImageView
+                    android:id="@+id/menuIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circleyellow"
+                    android:contentDescription="Menu"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_notificaciones" />
+
+                <ImageView
+                    android:id="@+id/options"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="1dp"
+                    android:layout_toStartOf="@id/menuIcon"
+                    android:background="@drawable/circleyellow"
+                    android:contentDescription="Options"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_tres_rayitas" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="MY LISTS"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#4C4C4C" />
+
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_SeeLater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/icons_layout"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="31dp"
+                android:text="See later"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:id="@+id/wishlist_gird2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_wishlist"
+                android:columCount="3"
+                android:rowCount="2"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/bizu_maquillaje"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sombras"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/regalo_princesa_ariel" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Princesa Ariel"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/regalo_under_armour" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Under Armour Ro"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+
+
+            </GridLayout>
+            <TextView
+                android:id="@+id/tv_christmas2025"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/icons_layout"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="5dp"
+                android:text="Christmas 2025"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <GridLayout
+                android:id="@+id/wishlist_gird"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_wishlist"
+                android:columCount="3"
+                android:rowCount="2"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/regalo_lego"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Muñeco lego"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/arcane_gloss_bomb" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gloss Bomb"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/arcane_mel_gold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Perfume Mel"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/tv_wishlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/icons_layout"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="10dp"
+                android:text="Offers"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:id="@+id/offers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_wishlist"
+                android:columCount="3"
+                android:rowCount="2"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/carrito_verde"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carrito verde"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/dipbrow_pomade" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pomada"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/heisenberg_plush" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Perfume Mel"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+
+
+            </GridLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/bottom_nav"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#707B65"
+                    android:text="New list"
+                    android:textColor="#FFFFFFFF"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
     <include
         android:layout="@layout/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
-</RelativeLayout>
+</LinearLayout>
