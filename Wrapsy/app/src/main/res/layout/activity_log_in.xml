@@ -63,6 +63,7 @@
             android:inputType="textPassword"
             android:background="#E3F6C6"
             android:padding="12dp"
+            android:layout_marginBottom="40dp"
             android:layout_marginTop="16dp"/>
 
         <TextView
@@ -79,19 +80,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Sign up"
+            android:layout_marginBottom="20dp"
             android:textColor="#3E3E3E"
             android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/btnFacebook"
-            android:layout_width="309dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#E3F6C6"
-            android:drawableLeft=""
-            android:paddingLeft="40dp"
-            android:text="Use Facebook"
-            android:textColor="#3E3E3E" />
 
         <Button
             android:id="@+id/btnGmail"
@@ -99,16 +90,18 @@
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="#E3F6C6"
-            android:drawableLeft=""
             android:paddingLeft="40dp"
             android:text="Use Gmail"
-            android:textColor="#3E3E3E" />
+            android:textColor="#3E3E3E"
+            android:layout_marginBottom="20dp"
+            />
 
         <Button
             android:layout_width="138dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="#707B65"
+            android:layout_marginBottom="15dp"
             android:text="Confirm"
             android:textColor="#FFFFFF" />
 

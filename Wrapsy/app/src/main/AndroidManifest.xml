@@ -16,6 +16,33 @@
             android:name=".StoresActivity"
             android:exported="false" />
         <activity
+            android:name=".OrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SaveItemMyListsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SaveItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CouponsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUs"
+            android:exported="false" />
+        <activity
+            android:name=".MoreOptionspaymentOptions"
+            android:exported="false" />
+        <activity
+            android:name=".moreOptionspurchaseHistory"
+            android:exported="false" />
+        <activity
+            android:name=".moreOptions"
+            android:exported="false" />
+        <activity
             android:name=".GiftQuizStep3Activity"
             android:exported="false" />
         <activity
