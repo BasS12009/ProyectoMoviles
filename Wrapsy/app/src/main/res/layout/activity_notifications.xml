@@ -142,7 +142,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Sale on AMAZON, wachale!!!"
+                        android:text="@string/notify"
                         android:textSize="14sp"
                         android:textColor="#333333" />
 
@@ -176,7 +176,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Sale on SHEIN, look!!!"
+                        android:text="@string/notify"
                         android:textSize="14sp"
                         android:textColor="#333333" />
 

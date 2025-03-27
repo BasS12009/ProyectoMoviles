@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="60dp"
         android:padding="8dp">
 
         <androidx.cardview.widget.CardView
@@ -118,7 +118,7 @@
                         android:id="@+id/tv_product_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Heimerdinger plush"
+                        android:text="@string/titulo_regalo_producto"
                         android:textColor="#333333"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -128,7 +128,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="It will arrive on March 30th"
+                        android:text="@string/informacion_fecha_llegada"
                         android:textColor="#333333"
                         android:textSize="14sp" />
 
@@ -137,7 +137,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Shipped"
+                        android:text="@string/status2"
                         android:textColor="#9370DB"
                         android:textSize="14sp" />
 
@@ -176,7 +176,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="6dp"
-            android:text="Status: Shipped"
+            android:text="@string/status"
             android:textColor="#333333"
             android:textSize="12sp" />
 
@@ -187,7 +187,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="6dp"
-            android:text="Order Number: #123456789"
+            android:text="@string/order_number"
             android:textColor="#333333"
             android:textSize="12sp" />
 
@@ -198,7 +198,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="6dp"
-            android:text="Quantity: 1 items"
+            android:text="@string/quantity"
             android:textColor="#333333"
             android:textSize="12sp" />
 
@@ -209,7 +209,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="6dp"
-            android:text="Order Date: March 20, 2025"
+            android:text="@string/order_date"
             android:textColor="#333333"
             android:textSize="12sp" />
 
@@ -220,7 +220,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="6dp"
-            android:text="Estimated Delivery: March 30, 2025"
+            android:text="@string/estimated_delivery"
             android:textColor="#333333"
             android:textSize="12sp" />
 
@@ -231,7 +231,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="6dp"
-            android:text="Total Cost: $30 USD"
+            android:text="@string/total_cost"
             android:textColor="#333333"
             android:textSize="12sp" />
 
