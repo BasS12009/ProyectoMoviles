@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="3dp"
+    android:background="@color/cremaPalido"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SendInviteActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginBottom="50dp"
+        >
+
+        <ImageView
+            android:id="@+id/basketIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:padding="8dp"
+            android:background="@drawable/circleyellow"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_notificaciones"
+            android:contentDescription="Shopping basket" />
+
+        <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:padding="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circleyellow"
+            android:src="@drawable/ic_notificaciones"
+            android:contentDescription="Menu" />
+
+        <ImageView
+            android:id="@+id/options"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:padding="8dp"
+            android:layout_toStartOf="@id/menuIcon"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circleyellow"
+            android:src="@drawable/ic_notificaciones"
+            android:contentDescription="Options" />
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_wrapsy"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wrapsy"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Sección de compartir - Agregar después de los LinearLayout existentes -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="70dp">
+
+        <!-- Contenedor para la sección de compartir -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="20dp"
+            android:layout_marginBottom="90dp"
+            app:cardElevation="0dp">
+
+            <!-- Encabezado "Invite a friend" -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Botón verde "Invite a friend" -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#A5D6A7"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="Invite a friend"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/purple_button"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <!-- WhatsApp -->
+                    <ImageView
+                        android:id="@+id/whatsapp_share"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="@drawable/circle_white"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_store"
+                        android:contentDescription="Share on WhatsApp" />
+
+                    <!-- Facebook -->
+                    <ImageView
+                        android:id="@+id/facebook_share"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="@drawable/circle_white"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_store"
+                        android:contentDescription="Share on Facebook" />
+
+                    <!-- Instagram -->
+                    <ImageView
+                        android:id="@+id/instagram_share"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="@drawable/circle_white"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_store"
+                        android:contentDescription="Share on Instagram" />
+
+                    <!-- Messenger -->
+                    <ImageView
+                        android:id="@+id/messenger_share"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="@drawable/circle_white"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_store"
+                        android:contentDescription="Share on Messenger" />
+
+                    <!-- Copy Link -->
+                    <ImageView
+                        android:id="@+id/copy_link"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="@drawable/circle_white"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_store"
+                        android:contentDescription="Copy Link" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#7D8779"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Cancel"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <include
+        android:layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

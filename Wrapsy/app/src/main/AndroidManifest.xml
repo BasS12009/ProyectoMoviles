@@ -13,11 +13,22 @@
         android:theme="@style/Theme.Wrapsy"
         tools:targetApi="31">
         <activity
-
+            android:name=".ReviewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SendInviteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShareWithFriendsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrderDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Profilelists"
-<activity
-    android:name=".OrderDetailsActivity"
-
             android:exported="false" />
         <activity
             android:name=".ProfileEditProfile"
