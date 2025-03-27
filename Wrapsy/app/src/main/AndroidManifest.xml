@@ -16,6 +16,19 @@
             android:name=".OrderDetailsActivity"
             android:exported="false" />
         <activity
+            android:name=".ProfileEditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".RecommendedGiftsActivity"
+            android:exported="false" />
+        <activity    
+            android:name=".StoresActivity"
+
+            android:exported="false" />
+        <activity
             android:name=".OrdersActivity"
             android:exported="false" />
         <activity

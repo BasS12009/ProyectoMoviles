@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/icono_wrapsy"
+            android:src="@drawable/ic_wrapsy"
             android:layout_marginTop="40dp"
             android:contentDescription="Logo" />
 
