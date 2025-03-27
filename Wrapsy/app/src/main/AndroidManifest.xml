@@ -19,6 +19,12 @@
             android:name=".OrderDetailsActivity"
             android:exported="false" />
         <activity
+            android:name=".Profilelists"
+            android:exported="false" />
+        <activity
+            android:name=".OrderDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileEditProfile"
             android:exported="false" />
         <activity
