@@ -48,4 +48,29 @@
     <string name="coupons">Coupons</string>
     <string name="profile">Profile</string>
 
+    <!-- Pantalla review -->
+    <string name="rating">Rating</string>
+    <string name="comment">Comment</string>
+    <string name="leave_comment">Leave us a comment</string>
+    <string name="submit_btn">Submit</string>
+
+    <!-- Pantalla de invitaciones y links-->
+    <string name="cancel_btn">Cancel</string>
+
+    <!-- Pantalla order-->
+    <string name="details">Details</string>
+    <string name="status">Status: Shipped</string>
+    <string name="order_number">Order Number: #123456789</string>
+    <string name="quantity">Quantity: 1 items</string>
+    <string name="order_date">Order Date: March 20, 2025</string>
+    <string name="estimated_delivery">Estimated Delivery: March 30, 2025</string>
+    <string name="total_cost">Total Cost: $30 USD</string>
+    <string name="status2">Shipped</string>
+    <string name="titulo_regalo_producto">Heisenberg</string>
+    <string name="informacion_fecha_llegada">Its almost there 4th May</string>
+
+    <!-- Pantalla notificaciones-->
+    <string name="notify">Sale on AMAZON, wachale!!!</string>
+
+
 </resources>

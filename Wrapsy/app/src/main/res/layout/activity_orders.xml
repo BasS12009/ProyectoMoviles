@@ -34,7 +34,7 @@
                     android:background="@drawable/circleyellow"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_notificaciones"
+                    android:src="@drawable/ic_shopping_basket"
                     android:contentDescription="Shopping basket" />
 
                 <ImageView
@@ -58,7 +58,7 @@
                     android:layout_toStartOf="@id/menuIcon"
                     android:layout_centerVertical="true"
                     android:background="@drawable/circleyellow"
-                    android:src="@drawable/ic_notificaciones"
+                    android:src="@drawable/ic_tres_rayitas"
                     android:contentDescription="Options" />
             </RelativeLayout>
 
@@ -117,9 +117,8 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginLeft="16dp"
-                            android:background="@drawable/circleblue"
                             android:padding="4dp"
-                            android:src="@drawable/ic_store" />
+                            android:src="@drawable/heisenberg_plush" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -131,7 +130,7 @@
                                 android:id="@+id/tv_product_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Heimerdinger plush"
+                                android:text="@string/titulo_regalo_producto"
                                 android:textColor="#333333"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -141,7 +140,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="It will arrive on March 30th"
+                                android:text="@string/informacion_fecha_llegada"
                                 android:textColor="#333333"
                                 android:textSize="14sp" />
 
@@ -150,7 +149,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Shipped"
+                                android:text="@string/status2"
                                 android:textColor="#9370DB"
                                 android:textSize="14sp" />
 
@@ -198,9 +197,8 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginLeft="16dp"
-                            android:background="@drawable/circleblue"
                             android:padding="4dp"
-                            android:src="@drawable/ic_store" />
+                            android:src="@drawable/flores_tejidas" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -212,7 +210,7 @@
                                 android:id="@+id/tv_product_name2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Handmade Crochet \n Sunflower Gift Bag"
+                                android:text="@string/titulo_regalo_producto"
                                 android:textColor="#333333"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -222,7 +220,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Delivered on February 14th"
+                                android:text="@string/informacion_fecha_llegada"
                                 android:textColor="#333333"
                                 android:textSize="14sp" />
 
@@ -231,7 +229,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Delivered"
+                                android:text="@string/status2"
                                 android:textColor="#9370DB"
                                 android:textSize="14sp" />
 
@@ -260,9 +258,8 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginLeft="16dp"
-                            android:background="@drawable/circleblue"
                             android:padding="4dp"
-                            android:src="@drawable/ic_store" />
+                            android:src="@drawable/fresitas_tqm" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -274,7 +271,7 @@
                                 android:id="@+id/tv_product_name3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Strawberry plush"
+                                android:text="@string/titulo_regalo_producto"
                                 android:textColor="#333333"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -284,7 +281,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="It was canceled"
+                                android:text="@string/informacion_fecha_llegada"
                                 android:textColor="#333333"
                                 android:textSize="14sp" />
 
@@ -293,7 +290,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
-                                android:text="Canceled"
+                                android:text="@string/status2"
                                 android:textColor="#9370DB"
                                 android:textSize="14sp" />
 
