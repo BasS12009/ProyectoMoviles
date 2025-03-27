@@ -4,7 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical" >
+
+        </LinearLayout>
+
+    </ScrollView>
     <ImageView
         android:id="@+id/iv_favorites"
         android:layout_width="50dp"
@@ -26,6 +38,7 @@
         android:background="@drawable/circleyellow"
         android:padding="8dp"
         android:src="@drawable/ic_notificaciones" />
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -74,113 +87,31 @@
     </LinearLayout>
 
 
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="178dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_nav"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="#707B65"
-        android:text="Log out"
-        android:textColor="#FFFFFFFF" />
-
-
     <LinearLayout
-        android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#B6E388"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:layout_height="wrap_content"
+        android:weight="vertical"
+        android:gravity="center" >
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Stores"
-                android:textSize="18dp"
-                />
-
-            <ImageView
-                android:src="@drawable/ic_store"
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Orders"
-                android:textSize="18dp"
-                />
-            <ImageView
-                android:src="@drawable/ic_orders"
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Coupons"
-                android:textSize="18dp"
-                />
-
-            <ImageView
-                android:src="@drawable/ic_coupon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:textSize="18dp"
-                />
-
-            <ImageView
-                android:src="@drawable/ic_profile"
-                android:layout_width="24dp"
-                android:layout_height="24dp"/>
-
-        </LinearLayout>
-
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_nav"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="300dp"
+            android:backgroundTint="#707B65"
+            android:text="Log out"
+            android:textColor="#FFFFFFFF" />
     </LinearLayout>
+
+
+
+    <include
+        android:layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
