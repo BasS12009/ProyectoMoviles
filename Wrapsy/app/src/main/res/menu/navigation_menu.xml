@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_stores"
-        android:icon="@drawable/ic_stores"
-        android:title="Inicio"/>
+        android:icon="@drawable/ic_store"
+        android:title="Stores"/>
 
     <item
         android:id="@+id/nav_orders"
@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/nav_coupons"
-        android:icon="@drawable/ic_coupons"
+        android:icon="@drawable/ic_coupon"
         android:title="Coupons"/>
 
     <item
