@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:background="@color/cremaPalido"
     tools:context=".ReviewsActivity">
-
+    
     <!-- Barra superior con iconos -->
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:background="@drawable/circleyellow"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_store"
+            android:src="@drawable/ic_shopping_basket"
             android:contentDescription="Shopping basket" />
 
         <ImageView
@@ -49,7 +49,7 @@
             android:layout_toStartOf="@id/menuIcon"
             android:layout_centerVertical="true"
             android:background="@drawable/circleyellow"
-            android:src="@drawable/ic_notificaciones"
+            android:src="@drawable/ic_tres_rayitas"
             android:contentDescription="Menu" />
     </RelativeLayout>
 
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="10dp">
 
         <ImageView
             android:layout_width="60dp"
@@ -99,7 +99,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/ic_store" />
+                android:src="@drawable/heisenberg_plush" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,7 +151,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="24dp">
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:id="@+id/rating_min"
@@ -203,7 +203,7 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="24dp"
         android:background="#FFF9C4"
@@ -219,9 +219,10 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         app:cardCornerRadius="8dp"
+        android:layout_marginBottom="10dp"
         app:cardElevation="0dp">
 
-        <TextView
+        <Button
             android:id="@+id/submit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -230,7 +231,13 @@
             android:padding="16dp"
             android:text="Submit"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            />
     </androidx.cardview.widget.CardView>
+
+    <include
+        android:layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

@@ -1,146 +1,290 @@
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
     android:background="#FFFEE8"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
 
-    <ImageView
-        android:id="@+id/iv_favorites"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_wrapsy"
-        android:layout_alignParentStart="true"
-        android:layout_margin="12dp" />
-
-    <ImageView
-        android:id="@+id/iv_notifications"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:background="@drawable/circleyellow"
-        android:padding="8dp"
-        android:src="@drawable/ic_notificaciones" />
-
-
-    <ImageView
-        android:id="@+id/profile_image"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/circle_white"
-        android:clipToOutline="true"
-        android:elevation="5dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/profile_john" />
-
-
-    <TextView
-        android:id="@+id/tv_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profile_image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="John Felix"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#4C4C4C" />
-
-
-    <ImageView
-        android:id="@+id/iv_edit_name"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_toEndOf="@id/tv_username"
-        android:layout_alignBottom="@id/tv_username"
-        android:layout_marginStart="8dp"
-        android:src="@drawable/ic_edit" />
-
-
-    <LinearLayout
-        android:id="@+id/bottom_nav"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#B6E388"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
-
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/basketIcon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:contentDescription="Shopping basket"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_wrapsy" />
+
+                <ImageView
+                    android:id="@+id/menuIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circleyellow"
+                    android:contentDescription="Menu"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_notificaciones" />
+
+                <ImageView
+                    android:id="@+id/options"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="1dp"
+                    android:layout_toStartOf="@id/menuIcon"
+                    android:background="@drawable/circleyellow"
+                    android:contentDescription="Options"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_notificaciones" />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/top_bar"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/circle_white"
+                    android:clipToOutline="true"
+                    android:elevation="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_john" />
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="John Felix"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#4C4C4C" />
+
+                <ImageView
+                    android:id="@+id/iv_edit_name"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_toEndOf="@id/tv_username"
+                    android:layout_alignBottom="@id/tv_username"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_edit" />
+                <LinearLayout
+                    android:id="@+id/icons_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/tv_username"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp">
+
+                    <ImageView
+                        android:id="@+id/iv_lists"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_list"
+                        android:layout_marginEnd="25dp"
+                        android:contentDescription="Lists" />
+
+                    <ImageView
+                        android:id="@+id/iv_share"
+                        android:layout_width="20dp"
+                        android:layout_height="26dp"
+                        android:src="@drawable/ic_share"
+                        android:contentDescription="Share with friends" />
+
+                </LinearLayout>
+            </LinearLayout>
+
 
             <TextView
+                android:id="@+id/tv_wishlist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Stores"
-                android:textSize="18sp" />
+                android:layout_below="@id/icons_layout"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="31dp"
+                android:text="WHISHLIST"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            <ImageView
-                android:src="@drawable/ic_store"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
+            <GridLayout
+                android:id="@+id/wishlist_gird2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Orders"
-                android:textSize="18sp" />
+                android:layout_below="@+id/tv_wishlist"
+                android:columCount="3"
+                android:rowCount="2"
+                android:padding="16dp">
 
-            <ImageView
-                android:src="@drawable/ic_orders"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/regalo_zapato_ballet"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zapatos Ballet"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/regalo_princesa_ariel" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Princesa Ariel"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/regalo_under_armour" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Under Armour Ro"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+
+
+            </GridLayout>
+            <GridLayout
+                android:id="@+id/wishlist_gird"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Coupons"
-                android:textSize="18sp" />
+                android:layout_below="@+id/tv_wishlist"
+                android:columCount="3"
+                android:rowCount="2"
+                android:padding="16dp">
 
-            <ImageView
-                android:src="@drawable/ic_coupon"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/regalo_lego"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Muñeco lego"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/regalo_princesa_ariel" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Princesa Ariel"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/regalo_under_armour" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Under Armour Ro"
+                        android:textSize="12sp"
+                        android:textColor="#4C4C4C" />
+
+                </LinearLayout>
+
+
+            </GridLayout>
         </LinearLayout>
+    </ScrollView>
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:textSize="18sp" />
+    <include
+        android:layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
-            <ImageView
-                android:src="@drawable/ic_profile"
-                android:layout_width="24dp"
-                android:layout_height="24dp" />
-        </LinearLayout>
-    </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

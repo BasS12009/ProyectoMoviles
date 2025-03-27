@@ -104,9 +104,9 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_coupon"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/didi_envios_apurado"
                         android:contentDescription="Delivery" />
 
                 </LinearLayout>
@@ -169,9 +169,9 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_coupon"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_PlushToy"
                         android:contentDescription="Delivery" />
 
                 </LinearLayout>
@@ -226,9 +226,9 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_coupon"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/carrito_verde"
                         android:contentDescription="Delivery" />
 
                 </LinearLayout>
@@ -291,9 +291,9 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_coupon"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/carrito_blanco"
                         android:contentDescription="Delivery" />
 
                 </LinearLayout>
@@ -312,6 +312,9 @@
 
 
     </GridLayout>
-
+    <include
+        android:layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
