@@ -3,10 +3,6 @@ package mx.edu.itson.potros.wrapsy
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class CouponsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +13,7 @@ class CouponsActivity : BaseActivity() {
         setSelectedItem(R.id.nav_coupons)
 
         val btnCanasta:ImageView = findViewById(R.id.basketIcon)
-        val btnMoreOptions:ImageView = findViewById(R.id.btn_tres_rayitas)
+        val btnMoreOptions:ImageView = findViewById(R.id.more_options)
 
         btnCanasta.setOnClickListener(){
             val intent = Intent(this, BasketActivity::class.java)
@@ -26,7 +22,7 @@ class CouponsActivity : BaseActivity() {
         }
 
         btnMoreOptions.setOnClickListener(){
-            val intent = Intent(this, moreOptions::class.java)
+            val intent = Intent(this, MoreOptions::class.java)
             startActivity(intent)
 
         }

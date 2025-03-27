@@ -40,7 +40,7 @@
                     android:layout_weight="1"/>
 
                 <ImageButton
-                    android:id="@+id/btn_tres_rayitas"
+                    android:id="@+id/btn_more_options"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="@drawable/circleyellow"
@@ -201,9 +201,8 @@
 
     </ScrollView>
 
-
     <include
-        android:layout="@layout/bottom_navigation"
+        layout="@layout/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

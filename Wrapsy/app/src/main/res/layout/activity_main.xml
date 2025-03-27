@@ -21,7 +21,7 @@ tools:context=".MainActivity">
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/icono_wrapsy" />
+        android:src="@drawable/ic_wrapsy" />
 
     <TextView
         android:id="@+id/txtAppName"

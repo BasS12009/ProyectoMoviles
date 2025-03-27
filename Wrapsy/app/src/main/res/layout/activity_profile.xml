@@ -140,7 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_wishlist"
-                android:columCount="3"
+                android:columnCount="3"
                 android:rowCount="2"
                 android:padding="16dp">
 
@@ -163,6 +163,7 @@
                         android:textColor="#4C4C4C"/>
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -183,6 +184,7 @@
                         android:textColor="#4C4C4C" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -203,18 +205,6 @@
                         android:textColor="#4C4C4C" />
 
                 </LinearLayout>
-
-
-            </GridLayout>
-            <GridLayout
-                android:id="@+id/wishlist_gird"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_wishlist"
-                android:columCount="3"
-                android:rowCount="2"
-                android:padding="16dp">
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -274,17 +264,14 @@
                         android:textColor="#4C4C4C" />
 
                 </LinearLayout>
-
-
             </GridLayout>
         </LinearLayout>
     </ScrollView>
 
 
     <include
-        android:layout="@layout/bottom_navigation"
+        layout="@layout/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

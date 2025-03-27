@@ -103,7 +103,7 @@
                     android:background="@color/pistache"
                     android:gravity="center"
                     android:padding="16dp"
-                    android:text="@string/invite_friend"
+                    android:text="Invite Friend"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:textStyle="bold" />
