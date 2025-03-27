@@ -9,17 +9,18 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.GridView
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 
-class BasketActivity : BaseActivity() {
+class BasketActivity : BaseActivity(){
     var adapter: ProductoAdapterBasket? = null
     var productos = ArrayList<Producto>()
-    val btnPayOrder:Button = findViewById(R.id.btn_pay_order)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recommended_gifts)
+        setContentView(R.layout.activity_basket)
+
+        val btnPayOrder: Button = findViewById(R.id.btn_pay_order)
 
         setupBottomNavigation()
         setSelectedItem(R.id.nav_stores)
@@ -82,5 +83,4 @@ class ProductoAdapterBasket(var context: Context?, var producto: ArrayList<Produ
 
         return vista
     }
-
 }

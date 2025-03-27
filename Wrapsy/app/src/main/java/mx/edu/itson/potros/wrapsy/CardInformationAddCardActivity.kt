@@ -4,10 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class CardInformationAddCardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +13,7 @@ class CardInformationAddCardActivity : AppCompatActivity() {
 
         val btnBasket:ImageView = findViewById(R.id.btn_basket)
         val btnNotification:ImageView = findViewById(R.id.btn_notificaciones)
-        val btnMoreOption:ImageView = findViewById(R.id.btn_tres_rayitas)
+        val btnMoreOption:ImageView = findViewById(R.id.more_options)
 
         btnBasket.setOnClickListener(){
             val intent = Intent(this, BasketActivity::class.java)
@@ -29,7 +26,7 @@ class CardInformationAddCardActivity : AppCompatActivity() {
 
         }
         btnMoreOption.setOnClickListener(){
-            val intent = Intent(this, moreOptions::class.java)
+            val intent = Intent(this, MoreOptions::class.java)
             startActivity(intent)
 
         }

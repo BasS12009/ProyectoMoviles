@@ -5,7 +5,7 @@
     android:background="#E6CEED"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".moreOptions">
+    tools:context=".MoreOptions">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -84,8 +84,7 @@
             android:text="Gift for Walter White - 23/03/25
                               Card ending in - 9843"
             android:textColor="#000000"
-            android:drawableEnd=""
-            android:gravity="center_vertical|start"
+            android:gravity="center_vertical"
             android:padding="16dp" />
 
         <Button
@@ -96,7 +95,6 @@
             android:text="Gift Purchase: Puma Cap - 10/03/25
                                 Card ending in - 9843"
             android:textColor="#000000"
-            android:drawableEnd=""
             android:gravity="center_vertical|start"
             android:padding="16dp"
             android:layout_marginTop="16dp" />
@@ -109,7 +107,6 @@
             android:text="GIFT CARD $100 purchase - 01/03/25
                           Card ending in - 9843"
             android:textColor="#000000"
-            android:drawableEnd=""
             android:gravity="center_vertical|start"
             android:padding="16dp"
             android:layout_marginTop="16dp" />

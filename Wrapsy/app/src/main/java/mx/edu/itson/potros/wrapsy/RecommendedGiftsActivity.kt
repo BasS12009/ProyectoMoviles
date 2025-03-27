@@ -1,5 +1,4 @@
 package mx.edu.itson.potros.wrapsy
-
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -15,13 +14,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class RecommendedGiftsActivity : AppCompatActivity() {
+class RecommendedGiftsActivity : BaseActivity(){
     var adapter: ProductoAdapter? = null
     var productos = ArrayList<Producto>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recommended_gifts)
 
+        setupBottomNavigation()
         cargarProductos()
 
         adapter = ProductoAdapter( this, productos)
@@ -76,6 +76,5 @@ class ProductoAdapter(var context: Context?, var producto: ArrayList<Producto>) 
 
         return vista
     }
-
 
 }

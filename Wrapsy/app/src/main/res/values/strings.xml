@@ -101,6 +101,7 @@
     <string name="comments">Comments</string>
     <string name="add_to_basket">Add to basket</string>
 
+
     <!-- Pantalla activity_profile -->
     <string name="app__name">MiAplicacion</string>
     <string name="shopping_basket">Shopping basket</string>
@@ -153,5 +154,9 @@
     <string name="cvv">CVV</string>
 
     
+
+
+    <string name="cardholder">John Felix Anthony cena</string>
+    <string name="card_numbers">**** **** **** 9843</string>
 
 </resources>

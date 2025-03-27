@@ -97,8 +97,7 @@
                 android:id="@+id/wishlist_gird2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_wishlist"
-                android:columCount="3"
+                android:columnCount="3"
                 android:rowCount="2"
                 android:padding="16dp">
 
@@ -180,7 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_wishlist"
-                android:columCount="3"
+                android:columnCount="3"
                 android:rowCount="2"
                 android:padding="16dp">
 
@@ -264,7 +263,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_wishlist"
-                android:columCount="3"
+                android:columnCount="3"
                 android:rowCount="2"
                 android:padding="16dp">
 
@@ -355,9 +354,8 @@
     </ScrollView>
 
     <include
-        android:layout="@layout/bottom_navigation"
+        layout="@layout/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

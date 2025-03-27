@@ -52,63 +52,66 @@
             android:contentDescription="Menu" />
     </RelativeLayout>
 
+    <!-- Contenedor principal de contenido -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <!-- Logo y título -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center"
-            android:padding="20dp"
-            >
-            <LinearLayout
+            android:layout_marginBottom="40dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:contentDescription="Logo"
+                android:src="@drawable/ic_wrapsy" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="40dp"
-                >
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:contentDescription="Logo"
-                    android:src="@drawable/ic_wrapsy" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Basket"
-                    android:textColor="@color/dark_green"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <GridView
-                android:id="@+id/productos_catalogo"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:numColumns="1"
-                android:paddingHorizontal="6dp"
-                android:scrollbars="vertical"/>
-            <Button
-                android:id="@+id/btn_pay_order"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pay for the order"
-                android:layout_marginTop="18dp"
-                android:backgroundTint="@color/verdeOlivaGrisaceo"
-                app:cornerRadius="8dp"/>
-
-
+                android:layout_marginTop="8dp"
+                android:text="Basket"
+                android:textColor="@color/dark_green"
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- GridView para mostrar productos -->
+        <GridView
+            android:id="@+id/productos_catalogo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:numColumns="1"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:scrollbars="vertical" />
 
+        <!-- Botón de pago -->
+        <Button
+            android:id="@+id/btn_pay_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pay for the order"
+            android:layout_marginTop="18dp"
+            android:backgroundTint="@color/verdeOlivaGrisaceo"
+            app:cornerRadius="8dp" />
 
+    </LinearLayout>
 
+    <!-- Barra de navegación inferior -->
     <include
-        android:layout="@layout/bottom_navigation"
+        layout="@layout/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
