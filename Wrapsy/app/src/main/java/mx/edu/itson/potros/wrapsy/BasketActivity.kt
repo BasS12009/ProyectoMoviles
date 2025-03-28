@@ -11,6 +11,8 @@ import android.widget.Button
 import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 class BasketActivity : BaseActivity(){
     var adapter: ProductoAdapterBasket? = null
@@ -23,7 +25,6 @@ class BasketActivity : BaseActivity(){
         val btnPayOrder: Button = findViewById(R.id.btn_pay_order)
 
         setupBottomNavigation()
-        setSelectedItem(R.id.nav_stores)
         cargarProductos()
 
         btnPayOrder.setOnClickListener() {
