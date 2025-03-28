@@ -109,13 +109,13 @@
             android:name=".PerfectGiftQuizActivity"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".SingUpAdress"
+            android:name=".SingUpAdressActivity"
             android:exported="false" />
         <activity
-            android:name=".SingUp"
+            android:name=".SingUpActivity"
             android:exported="false" />
         <activity
             android:name=".StoresActivity"

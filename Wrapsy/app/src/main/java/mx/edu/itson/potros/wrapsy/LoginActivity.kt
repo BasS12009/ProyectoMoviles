@@ -3,14 +3,9 @@ package mx.edu.itson.potros.wrapsy
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class LogIn : BaseActivity() {
+class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
@@ -24,7 +19,7 @@ class LogIn : BaseActivity() {
         }
 
         btnSignUp.setOnClickListener(){
-            val intent = Intent(this, SingUp::class.java)
+            val intent = Intent(this, SingUpActivity::class.java)
             startActivity(intent)
         }
 

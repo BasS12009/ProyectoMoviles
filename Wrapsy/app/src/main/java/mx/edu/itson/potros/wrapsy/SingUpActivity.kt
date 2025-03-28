@@ -5,22 +5,16 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class GiftQuizEndActivity : AppCompatActivity() {
+class SingUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gift_quiz)
+        setContentView(R.layout.activity_sing_up)
 
-        val aceptar:Button = findViewById<Button>(R.id.btnAccept)
+        val btnConfirm: Button = findViewById(R.id.btn_confirm)
 
-        aceptar.setOnClickListener(){
-            val intent = Intent(this, StoresActivity::class.java)
+        btnConfirm.setOnClickListener(){
+            val intent = Intent(this, SingUpAdressActivity::class.java)
             startActivity(intent)
-
         }
-
-
-
-
-
     }
 }

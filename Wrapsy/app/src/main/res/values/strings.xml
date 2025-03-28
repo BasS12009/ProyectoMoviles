@@ -18,7 +18,7 @@
     <string name="slogan">Slogan</string>
     <string name="btn_sign_up">Sign up</string>
 
-    <!-- Pantalla SingUp -->
+    <!-- Pantalla SingUpActivity -->
     <string name="signup_welcome">Welcome to Wrapsy</string>
     <string name="signup_subtitle">Sign up to start</string>
     <string name="hint_name">Your name</string>
