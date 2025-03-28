@@ -7,12 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Button
 import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class PlantillaStoreActivity : AppCompatActivity() {
+class PlantillaStoreActivity : BaseActivity() {
     var adapter: ProductoAdapterBasket? = null
     var productos = ArrayList<Producto>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,9 @@ class PlantillaStoreActivity : AppCompatActivity() {
         setContentView(R.layout.activity_plantilla_store)
 
         cargarProductos()
+        setupBottomNavigation()
+
+
 
         adapter = ProductoAdapterBasket(this, productos)
         var gridProducto: GridView = findViewById(R.id.productos_catalogo)

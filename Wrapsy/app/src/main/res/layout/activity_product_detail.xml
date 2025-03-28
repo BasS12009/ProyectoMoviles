@@ -102,7 +102,7 @@
                     android:id="@+id/iv_gift_image_cell"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/rimel_costoso"/>
+                    android:src="@drawable/velvet_lipstick"/>
 
                 <TextView
                     android:id="@+id/tv_gift_name_cell"

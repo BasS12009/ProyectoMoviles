@@ -14,6 +14,7 @@ class CouponsActivity : BaseActivity() {
 
         val btnCanasta:ImageView = findViewById(R.id.basketIcon)
         val btnMoreOptions:ImageView = findViewById(R.id.more_options)
+        val btnNotification:ImageView = findViewById(R.id.btn_notificaciones)
 
         btnCanasta.setOnClickListener(){
             val intent = Intent(this, BasketActivity::class.java)
@@ -25,6 +26,11 @@ class CouponsActivity : BaseActivity() {
             val intent = Intent(this, MoreOptions::class.java)
             startActivity(intent)
 
+        }
+
+        btnNotification.setOnClickListener(){
+            val intent = Intent(this, NotificationsActivity::class.java)
+            startActivity(intent)
         }
 
 

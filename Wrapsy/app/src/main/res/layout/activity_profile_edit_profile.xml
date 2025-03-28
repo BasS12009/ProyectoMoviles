@@ -33,7 +33,7 @@
                     android:src="@drawable/ic_wrapsy" />
 
                 <ImageView
-                    android:id="@+id/menuIcon"
+                    android:id="@+id/btn_notificaciones"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
@@ -45,12 +45,12 @@
                     android:src="@drawable/ic_notificaciones" />
 
                 <ImageView
-                    android:id="@+id/options"
+                    android:id="@+id/more_options"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_centerVertical="true"
                     android:layout_margin="1dp"
-                    android:layout_toStartOf="@id/menuIcon"
+                    android:layout_toStartOf="@id/btn_notificaciones"
                     android:background="@drawable/circleyellow"
                     android:contentDescription="Options"
                     android:padding="8dp"
