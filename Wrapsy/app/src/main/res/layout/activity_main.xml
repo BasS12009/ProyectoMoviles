@@ -37,7 +37,6 @@ tools:context=".MainActivity">
         android:id="@+id/txtLoginInstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Slogan"
         android:textColor="#333333"
         android:textSize="16sp" />
@@ -53,12 +52,12 @@ tools:context=".MainActivity">
         android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#5F7A48"
         android:padding="12dp"
-        android:text="Sing up"
+        android:text="Sign up"
         android:textColor="#FFFFFF" />
 
     <Button

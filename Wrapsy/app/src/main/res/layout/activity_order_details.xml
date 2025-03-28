@@ -12,11 +12,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="16dp">
 
         <ImageView
-            android:id="@+id/basketIcon"
+            android:id="@+id/btn_basket"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="5dp"
@@ -28,7 +29,7 @@
             android:contentDescription="Shopping basket" />
 
         <ImageView
-            android:id="@+id/menuIcon"
+            android:id="@+id/btn_notificaciones"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="5dp"
@@ -40,12 +41,12 @@
             android:contentDescription="Menu" />
 
         <ImageView
-            android:id="@+id/options"
+            android:id="@+id/more_options"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="1dp"
             android:padding="8dp"
-            android:layout_toStartOf="@id/menuIcon"
+            android:layout_toStartOf="@id/btn_notificaciones"
             android:layout_centerVertical="true"
             android:background="@drawable/circleyellow"
             android:src="@drawable/ic_tres_rayitas"
