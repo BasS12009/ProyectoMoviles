@@ -3,6 +3,7 @@ package mx.edu.itson.potros.wrapsy
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,6 +26,12 @@ class OrdersActivity : BaseActivity() {
         val btnBasket: ImageView = findViewById(R.id.btn_basket)
         val btnNotification:ImageView = findViewById(R.id.btn_notificaciones)
         val btnMoreOption:ImageView = findViewById(R.id.more_options)
+        val btnOrder:ImageView = findViewById(R.id.btn_order)
+
+        btnOrder.setOnClickListener(){
+            val intent = Intent(this, OrderDetailsActivity::class.java)
+            startActivity(intent)
+        }
 
         btnBasket.setOnClickListener(){
             val intent = Intent(this, BasketActivity::class.java)
