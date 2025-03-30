@@ -1,12 +1,14 @@
 package mx.edu.itson.potros.wrapsy
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class BasketTotalActivity : AppCompatActivity() {
+class BasketTotalActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,5 +18,16 @@ class BasketTotalActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        setupBottomNavigation()
+
+        val btnConfirm: TextView = findViewById(R.id.btn_confirm)
+
+        btnConfirm.setOnClickListener(){
+            val intent = Intent(this, BasketCardConfirmationActivity::class.java)
+            startActivity(intent)
+
+        }
+
     }
 }

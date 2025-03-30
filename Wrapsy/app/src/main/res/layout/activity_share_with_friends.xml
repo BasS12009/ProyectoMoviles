@@ -142,7 +142,7 @@
             <TextView
                 android:id="@+id/cancel_button"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/verdeOlivaGrisaceo"
                 android:gravity="center"
                 android:padding="16dp"
@@ -153,7 +153,7 @@
     </LinearLayout>
 
     <include
-        android:layout="@layout/bottom_navigation"
+        layout="@layout/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

@@ -34,7 +34,7 @@
             android:name=".ProfileListInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".profileNewList"
+            android:name=".ProfileNewList"
             android:exported="false" />
         <activity
             android:name=".PlantillaStoreActivity"
@@ -85,10 +85,10 @@
             android:name=".AboutUs"
             android:exported="false" />
         <activity
-            android:name=".MoreOptionspaymentOptions"
+            android:name=".PaymentOptions"
             android:exported="false" />
         <activity
-            android:name=".moreOptionspurchaseHistory"
+            android:name=".PurchaseHistory"
             android:exported="false" />
         <activity
             android:name=".MoreOptions"

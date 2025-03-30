@@ -6,7 +6,7 @@
     android:background="#E6CEED"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".moreOptions">
+    tools:context=".PaymentOptions">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                     android:src="@drawable/ic_wrapsy" />
 
                 <ImageView
-                    android:id="@+id/menuIcon"
+                    android:id="@+id/btn_notificaciones"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
@@ -137,7 +137,7 @@
      >
 
                 <Button
-                    android:id="@+id/btn_logout"
+                    android:id="@+id/btn_add_card"
                     android:layout_width="178dp"
                     android:layout_height="wrap_content"
                     android:layout_above="@+id/bottom_nav"
@@ -145,7 +145,7 @@
                     android:layout_marginTop="65dp"
                     android:layout_marginBottom="20dp"
                     android:backgroundTint="#707B65"
-                    android:text="Log out"
+                    android:text="Add card"
                     android:textColor="#FFFFFFFF" />
             </LinearLayout>
 
@@ -155,7 +155,7 @@
 
 
     <include
-        android:layout="@layout/bottom_navigation"
+        layout="@layout/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />

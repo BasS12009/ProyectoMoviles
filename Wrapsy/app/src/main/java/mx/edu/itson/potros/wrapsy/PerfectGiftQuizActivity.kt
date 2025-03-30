@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 class PerfectGiftQuizActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContentView(R.layout.activity_perfect_gift_quiz)
 
         val btnYes: Button = findViewById(R.id.btnYes)

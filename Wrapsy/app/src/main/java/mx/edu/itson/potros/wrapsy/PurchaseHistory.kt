@@ -2,26 +2,30 @@ package mx.edu.itson.potros.wrapsy
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-    class Profilelists : BaseActivity() {
+class PurchaseHistory : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_profilelists)
+        setContentView(R.layout.activity_more_optionspurchase_history)
 
         setupBottomNavigation()
 
-        val btnNewList: Button = findViewById(R.id.btn_new_list)
+        val btnNotification: ImageView = findViewById(R.id.btn_notificaciones)
 
-        btnNewList.setOnClickListener(){
-            val intent = Intent(this, ProfileNewList::class.java)
+
+
+        btnNotification.setOnClickListener(){
+            val intent = Intent(this, NotificationsActivity::class.java)
             startActivity(intent)
 
         }
+
+
+
+
     }
 }

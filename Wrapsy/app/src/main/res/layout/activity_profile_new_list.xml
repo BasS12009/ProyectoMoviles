@@ -102,33 +102,13 @@ tools:context=".ProfileEditProfile">
                 android:background="@drawable/edit_text_backkground_white"
                 android:padding="12dp" />
 
-            <ImageView
-                android:id="@+id/list_item_image"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/regalo_under_armour"
-                android:layout_marginTop="16dp" />
-
-            <TextView
-                android:id="@+id/list_item_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Under Armour"
-                android:textSize="16sp"
-                android:textColor="#4C4C4C"
-                android:layout_marginTop="8dp" />
 
 
 
-            <Button
-                android:id="@+id/add_button"
-                android:layout_width="152dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/amarilloClaroPastel"
-                android:text="Add"
-                android:layout_gravity="center"
-                android:textColor="#4C4C4C" />
+
+
+
+
 
 
 
@@ -141,7 +121,7 @@ tools:context=".ProfileEditProfile">
             android:gravity="center">
 
             <Button
-                android:id="@+id/btn_logout"
+                android:id="@+id/btn_confirm"
                 android:layout_width="178dp"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/bottom_nav"
@@ -149,7 +129,7 @@ tools:context=".ProfileEditProfile">
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="#707B65"
                 android:layout_marginTop="70dp"
-                android:text="New list"
+                android:text="Confirm"
                 android:textColor="#FFFFFFFF" />
         </LinearLayout>
 

@@ -2,6 +2,7 @@ package mx.edu.itson.potros.wrapsy
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -17,10 +18,29 @@ class MoreOptions : BaseActivity() {
         }
         setupBottomNavigation()
 
+        val btnPurchaseHistory:Button = findViewById(R.id.btn_purchase_history)
+
         val btnNotification: ImageView = findViewById(R.id.btn_notificaciones)
+        val btnPaymentOptions:Button = findViewById(R.id.btn_payment_options)
+        val aboutUs:Button = findViewById(R.id.btn_about_us)
 
         btnNotification.setOnClickListener() {
             val intent = Intent(this, NotificationsActivity::class.java)
+            startActivity(intent)
+
+        }
+        btnPurchaseHistory.setOnClickListener() {
+            val intent = Intent(this, PurchaseHistory::class.java)
+            startActivity(intent)
+
+        }
+        btnPaymentOptions.setOnClickListener() {
+            val intent = Intent(this, PaymentOptions::class.java)
+            startActivity(intent)
+
+        }
+        aboutUs.setOnClickListener() {
+            val intent = Intent(this, AboutUs::class.java)
             startActivity(intent)
 
         }

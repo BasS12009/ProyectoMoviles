@@ -14,7 +14,7 @@ class NotificationsActivity : BaseActivity() {
         setContentView(R.layout.activity_notifications)
 
         val btnBasket: ImageView = findViewById(R.id.basketIcon)
-        val btnMoreOption: ImageView = findViewById(R.id.options)
+        val btnMoreOption: ImageView = findViewById(R.id.more_options)
 
         btnBasket.setOnClickListener(){
             val intent = Intent(this, BasketActivity::class.java)
