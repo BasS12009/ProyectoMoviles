@@ -18,7 +18,7 @@ class GiftQuizEndActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gift_quiz) // Asegúrate de que este es el layout correcto
+        setContentView(R.layout.activity_gift_quiz) 
 
         mDatabase = FirebaseDatabase.getInstance().getReference()
 
