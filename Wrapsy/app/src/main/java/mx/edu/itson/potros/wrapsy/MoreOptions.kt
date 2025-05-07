@@ -23,26 +23,34 @@ class MoreOptions : BaseActivity() {
         val btnNotification: ImageView = findViewById(R.id.btn_notificaciones)
         val btnPaymentOptions:Button = findViewById(R.id.btn_payment_options)
         val aboutUs:Button = findViewById(R.id.btn_about_us)
+        val btnLogout: Button = findViewById(R.id.btn_logout)
 
-        btnNotification.setOnClickListener() {
+        btnNotification.setOnClickListener {
             val intent = Intent(this, NotificationsActivity::class.java)
             startActivity(intent)
-
         }
-        btnPurchaseHistory.setOnClickListener() {
+
+        btnPurchaseHistory.setOnClickListener {
             val intent = Intent(this, PurchaseHistory::class.java)
             startActivity(intent)
-
         }
-        btnPaymentOptions.setOnClickListener() {
+
+        btnPaymentOptions.setOnClickListener {
             val intent = Intent(this, PaymentOptions::class.java)
             startActivity(intent)
-
         }
-        aboutUs.setOnClickListener() {
+
+        aboutUs.setOnClickListener {
             val intent = Intent(this, AboutUs::class.java)
             startActivity(intent)
+        }
 
+        btnLogout.setOnClickListener {
+
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
         }
     }
 }
