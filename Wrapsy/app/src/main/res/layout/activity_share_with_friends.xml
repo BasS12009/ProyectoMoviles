@@ -96,8 +96,8 @@
                 android:background="@color/pistache"
                 android:orientation="vertical">
 
-                <!-- Botón verde "Invite a friend" -->
                 <TextView
+                    android:id="@+id/tvInviteApp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/purple_button"
@@ -117,12 +117,13 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tvSendQuiz"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/purple_button"
                         android:gravity="center"
                         android:padding="16dp"
-                        android:text="Send quizz"
+                        android:text="Send quiz"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp"
                         android:textStyle="bold" />
