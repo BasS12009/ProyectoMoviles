@@ -45,7 +45,6 @@ class GiftQuizEndActivity : AppCompatActivity() {
                         val step3Budget = dataSnapshot.child("step3_budget").getValue(String::class.java)
                         val step3Wrapping = dataSnapshot.child("step3_wrapping").getValue(String::class.java)
 
-                        // Muestra los datos en un Toast
                         val message = "Your preferences have been saved"
                         Toast.makeText(this@GiftQuizEndActivity, message, Toast.LENGTH_LONG).show()
 

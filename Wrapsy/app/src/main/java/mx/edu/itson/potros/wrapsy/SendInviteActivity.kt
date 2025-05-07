@@ -49,7 +49,7 @@ class SendInviteActivity : BaseActivity() {
     }
 
     private fun getShareText(): String {
-        return "Check out Wrapsy! https://play.google.com/store/apps/details?id=$packageName"
+        return "Check out Wrapsy! https://asielblox.linkmock/wrapsy"
     }
 
     private fun shareLink(text: String, packageName: String? = null) {
