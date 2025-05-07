@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548995881315",
+    "project_id": "wrapsydb",
+    "storage_bucket": "wrapsydb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548995881315:android:6b9c271bddee5a1f0c5b56",
+        "android_client_info": {
+          "package_name": "itson.edu.mx.wrapsy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3u3CERweJ9nDYC8NsDoV6UZzGBr47dtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
