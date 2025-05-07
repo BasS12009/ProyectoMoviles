@@ -66,6 +66,7 @@
             android:layout_marginBottom="15dp"
             />
         <EditText
+            android:id="@+id/etNombre"
             android:layout_width="295dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -77,6 +78,7 @@
             android:textSize="14sp" />
 
         <EditText
+            android:id="@+id/etUser"
             android:layout_width="293dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -88,6 +90,7 @@
             android:textSize="14sp" />
 
         <EditText
+            android:id="@+id/etCorreo"
             android:layout_width="291dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -99,6 +102,7 @@
             android:textSize="14sp" />
 
         <EditText
+            android:id="@+id/etNumero"
             android:layout_width="293dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -110,6 +114,7 @@
             android:textSize="14sp" />
 
         <EditText
+            android:id="@+id/etContrasena"
             android:layout_width="293dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -121,6 +126,7 @@
             android:textSize="14sp" />
 
         <EditText
+            android:id="@+id/etConfirmarContrasena"
             android:layout_width="293dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
