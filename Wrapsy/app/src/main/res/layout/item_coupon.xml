@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/couponCardView"
+    android:layout_width="180dp"
+    android:layout_height="250dp"
+    android:layout_margin="5dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/pistache">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/couponTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Free delivery"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/couponDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Get free shipping on your purchase!"
+            android:textSize="12sp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/couponImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/didi_envios_apurado"
+                android:contentDescription="Coupon image" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/couponExpiryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expires on April 15th"
+            android:textSize="10sp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
