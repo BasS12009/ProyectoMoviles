@@ -15,10 +15,20 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+    <LinearLayout
+        android:id="@+id/items_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
         <LinearLayout
+            android:id="@+id/productos_catalogo"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp" />
+
 
             <RelativeLayout
                 android:id="@+id/top_bar"

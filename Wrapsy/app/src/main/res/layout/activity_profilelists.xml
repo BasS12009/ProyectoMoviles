@@ -6,7 +6,7 @@
     android:background="#FFFEE8"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileEditProfile">
+    tools:context=".Profilelists">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -80,6 +80,16 @@
 
             </LinearLayout>
 
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/lists_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"/>
+            </ScrollView>
 
             <TextView
                 android:id="@+id/tv_SeeLater"
