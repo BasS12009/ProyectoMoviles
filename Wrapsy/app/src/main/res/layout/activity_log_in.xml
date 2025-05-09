@@ -85,7 +85,7 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/btnGmail"
+            android:id="@+id/btnGoogle"
             android:layout_width="309dp"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
