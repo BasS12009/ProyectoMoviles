@@ -32,6 +32,9 @@ class ProfileEditProfile : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_edit_profile)
 
+        setupBottomNavigation()
+        setSelectedItem(R.id.nav_profile)
+
         auth = FirebaseAuth.getInstance()
         storageRef = FirebaseStorage.getInstance().reference
         databaseRef = FirebaseDatabase.getInstance().reference

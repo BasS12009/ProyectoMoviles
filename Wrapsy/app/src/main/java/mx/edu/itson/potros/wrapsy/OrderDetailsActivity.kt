@@ -9,7 +9,6 @@ import androidx.core.view.WindowInsetsCompat
 class OrderDetailsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_order_details)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -18,6 +17,7 @@ class OrderDetailsActivity : BaseActivity() {
         }
 
         setupBottomNavigation()
+        setSelectedItem(R.id.nav_coupons)
 
 
 

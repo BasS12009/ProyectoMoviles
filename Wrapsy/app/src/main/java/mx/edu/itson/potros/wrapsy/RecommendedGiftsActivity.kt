@@ -9,10 +9,6 @@ import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class RecommendedGiftsActivity : BaseActivity(){
     var adapter: ProductoAdapter? = null
@@ -56,7 +52,7 @@ class ProductoAdapter(var context: Context?, var producto: ArrayList<Producto>) 
     override fun getView(pe: Int, p1: View?, p2: ViewGroup?): View {
         var producto = producto[pe]
         var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        var vista = inflator.inflate(R.layout.producto, null)
+        var vista = inflator.inflate(R.layout.item_gift, null)
         var image: ImageView = vista.findViewById(R.id.image_producto_cell)
         var title: TextView = vista.findViewById(R.id.titulo_producto_cell)
         var descripcion: TextView = vista.findViewById(R.id.descripcion_producto_cell)

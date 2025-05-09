@@ -7,11 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.Button
 import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 
 class PlantillaStoreActivity : BaseActivity() {
     var adapter: ProductoAdapterBasket? = null
@@ -100,7 +98,7 @@ class PlantillaStoreActivity : BaseActivity() {
         override fun getView(pe: Int, p1: View?, p2: ViewGroup?): View {
             var producto = producto[pe]
             var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            var vista = inflator.inflate(R.layout.producto, null)
+            var vista = inflator.inflate(R.layout.item_gift, null)
             var image: ImageView = vista.findViewById(R.id.image_producto_cell)
             var title: TextView = vista.findViewById(R.id.titulo_producto_cell)
             var descripcion: TextView = vista.findViewById(R.id.descripcion_producto_cell)
