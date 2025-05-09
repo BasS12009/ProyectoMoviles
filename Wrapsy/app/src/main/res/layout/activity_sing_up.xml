@@ -42,14 +42,14 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/gmail_button"
+            android:id="@+id/google_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="#E3F6C6"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="Use Gmail"
+            android:text="Use Google"
             android:textAllCaps="false"
             android:textColor="#4D5F41"
             android:layout_marginBottom="20dp"

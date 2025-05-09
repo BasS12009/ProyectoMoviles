@@ -22,7 +22,7 @@ class ProfileNewList : BaseActivity() {
         val btnConfirm = findViewById<Button>(R.id.btn_confirm)
         val nameInput = findViewById<EditText>(R.id.et_list_name)
 
-//        btnConfirm.setOnClickListener {
+        btnConfirm.setOnClickListener {
 //            val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
 //            val db = FirebaseDatabase.getInstance().getReference("lists").child(userId)
 //            val key = db.push().key ?: return@setOnClickListener
@@ -35,6 +35,5 @@ class ProfileNewList : BaseActivity() {
 //            }.addOnFailureListener {
 //                Toast.makeText(this, "Error saving", Toast.LENGTH_SHORT).show()
 //            }
-//        }
-    }
+        }}
 }

@@ -157,4 +157,6 @@
     <string name="cardholder">John Felix Anthony cena</string>
     <string name="card_numbers">**** **** **** 9843</string>
 
+    <string name="default_web_client_id">147493623866-qtdltfhk3vq1ujs0u5vhjah86mj7cru8.apps.googleusercontent.com</string>
+
 </resources>
