@@ -1,5 +1,6 @@
 package mx.edu.itson.potros.wrapsy.Entities
 
+import android.media.Rating
 import com.google.firebase.firestore.DocumentSnapshot
 
 data class Gift(
@@ -10,7 +11,8 @@ data class Gift(
     var imageUrl: String = "",
     var categories: List<String> = listOf(),
     var isFavorite: Boolean = false,
-    var imageResourceId: Int = 0
+    var imageResourceId: Int = 0,
+    var rating: Double = 0.0
 ) {
     // Función para convertir a Map (excluyendo el ID)
     fun toMap(): Map<String, Any> {

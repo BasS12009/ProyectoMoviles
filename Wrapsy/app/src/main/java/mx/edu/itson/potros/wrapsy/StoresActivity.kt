@@ -137,8 +137,7 @@ class StoresActivity : BaseActivity() {
 
                 gridView.setOnItemClickListener { _, _, position, _ ->
                     val gift = adapter.getItem(position) as Gift
-                    // Uncomment when GiftDetailActivity is ready
-                    // navigateToGiftDetail(gift)
+                    navigateToGiftDetail(gift)
                 }
             } else {
                 gridView.visibility = View.GONE
@@ -154,11 +153,11 @@ class StoresActivity : BaseActivity() {
         }
     }
 
-    // Uncomment when GiftDetailActivity is ready
-    // private fun navigateToGiftDetail(gift: Gift) {
-    //     val intent = Intent(this, GiftDetailActivity::class.java).apply {
-    //         putExtra("GIFT_ID", gift.id)
-    //     }
-    //     startActivity(intent)
-    // }
+    private fun navigateToGiftDetail(gift: Gift) {
+        Log.d("StoresActivity", "Navigating to gift detail: ${gift.id}")
+        val intent = Intent(this, GiftDetailActivity::class.java).apply {
+            putExtra("GIFT_ID", gift.id)
+        }
+        startActivity(intent)
+    }
 }

@@ -53,7 +53,7 @@
             android:name=".ShareWithFriendsActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductDetailActivity"
+            android:name=".GiftDetailActivity"
             android:exported="false" />
         <activity
             android:name=".OrderDetailsActivity"

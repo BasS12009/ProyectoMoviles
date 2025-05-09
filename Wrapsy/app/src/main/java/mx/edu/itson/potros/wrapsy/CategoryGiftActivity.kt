@@ -101,11 +101,10 @@ class CategoryGiftActivity : BaseActivity() {
     }
 
     private fun navigateToGiftDetail(gift: Gift) {
-        // val intent = Intent(this, GiftDetailActivity::class.java).apply {
-        //     putExtra("GIFT_ID", gift.id)
-        // }
-        // startActivity(intent)
-
-        // For now, just show a toast
+        Log.d("CategoryGiftActivity", "Navigating to gift detail: ${gift.id}")
+        val intent = Intent(this, GiftDetailActivity::class.java).apply {
+            putExtra("GIFT_ID", gift.id)
+        }
+        startActivity(intent)
     }
 }

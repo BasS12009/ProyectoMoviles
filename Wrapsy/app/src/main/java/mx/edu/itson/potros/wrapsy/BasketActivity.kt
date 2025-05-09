@@ -11,8 +11,6 @@ import android.widget.Button
 import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import mx.edu.itson.potros.wrapsy.Entities.Gift
 
 class BasketActivity : BaseActivity(){
@@ -69,7 +67,7 @@ class ProductoAdapterBasket(var context: Context?, var gift: ArrayList<Gift>) : 
 
 
         image.setOnClickListener() {
-            val intento = Intent(context, ProductDetailActivity::class.java)
+            val intento = Intent(context, GiftDetailActivity::class.java)
             intento.putExtra("titulo", gift.name)
             intento.putExtra("imagen", gift.imageResourceId)
             intento.putExtra("descripcion", gift.description)

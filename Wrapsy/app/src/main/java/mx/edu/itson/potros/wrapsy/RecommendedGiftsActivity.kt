@@ -62,7 +62,7 @@ class ProductoAdapter(var context: Context?, var producto: ArrayList<Producto>) 
         descripcion.setText(producto.descripcion)
 
         image.setOnClickListener() {
-            val intento = Intent(context, ProductDetailActivity::class.java)
+            val intento = Intent(context, GiftDetailActivity::class.java)
             intento.putExtra("titulo", producto.titulo)
             intento.putExtra("imagen", producto.image)
             intento.putExtra("descripcion", producto.descripcion)

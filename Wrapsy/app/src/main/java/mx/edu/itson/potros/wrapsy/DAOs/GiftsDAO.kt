@@ -48,6 +48,23 @@ class GiftsDAO {
             }
     }
 
+    fun getAllGifts(onSuccess: (List<Gift>) -> Unit) {
+        FirebaseFirestore.getInstance().collection("Gifts")
+            .get()
+            .addOnSuccessListener { result ->
+                val gifts = result.map {
+                    Gift.fromDocumentSnapshot(it).apply {
+                        rating = it.getDouble("averageRating") ?: 0.0
+                    }
+                }
+                onSuccess(gifts)
+            }
+            .addOnFailureListener { e ->
+                Log.e("Firestore", "Error obteniendo productos", e)
+                onSuccess(emptyList())
+            }
+    }
+
     fun getGiftsByCategory(
         category: String,
         onSuccess: (List<Gift>) -> Unit
