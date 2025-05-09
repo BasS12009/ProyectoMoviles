@@ -1,6 +1,7 @@
 package mx.edu.itson.potros.wrapsy
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -11,6 +12,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import mx.edu.itson.potros.wrapsy.Adapters.CommentAdapter
 import mx.edu.itson.potros.wrapsy.DAOs.GiftsDAO
 import mx.edu.itson.potros.wrapsy.Entities.Comment
@@ -21,8 +24,11 @@ class GiftDetailActivity : BaseActivity() {
 
     private lateinit var giftsDAO: GiftsDAO
     private var giftId: String = ""
+    private lateinit var currentGift: Gift
     private lateinit var commentsRecycler: RecyclerView
     private lateinit var commentAdapter: CommentAdapter
+    private lateinit var sharedPreferences: SharedPreferences
+    private val gson = Gson()
 
     // UI Elements
     private lateinit var giftImageView: ImageView
@@ -55,12 +61,30 @@ class GiftDetailActivity : BaseActivity() {
         commentsRecycler = findViewById(R.id.comments_recycler)
 
         addToBasketButton.setOnClickListener {
+            addToBasket(currentGift)
             Toast.makeText(this, "Added to basket!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, BasketActivity::class.java)
+            startActivity(intent)
         }
 
         saveItemLink.setOnClickListener {
             Toast.makeText(this, "Item saved!", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun addToBasket(gift: Gift) {
+        val basketListJson = sharedPreferences.getString("basket_items", null)
+        val basketList = if (basketListJson.isNullOrEmpty()) {
+            mutableListOf<Gift>()
+        } else {
+            val type = object : TypeToken<MutableList<Gift>>() {}.type
+            gson.fromJson(basketListJson, type)
+        }
+
+        basketList.add(gift)
+
+        val updatedBasketListJson = gson.toJson(basketList)
+        sharedPreferences.edit().putString("basket_items", updatedBasketListJson).apply()
     }
 
     private fun setupRecyclerView() {
@@ -81,8 +105,8 @@ class GiftDetailActivity : BaseActivity() {
 
         giftsDAO.getGift(giftId) { gift ->
             if (gift != null) {
+                currentGift = gift
                 updateUI(gift)
-                loadComments(gift)
             } else {
                 Toast.makeText(this, "Error: Gift not found", Toast.LENGTH_SHORT).show()
                 finish()

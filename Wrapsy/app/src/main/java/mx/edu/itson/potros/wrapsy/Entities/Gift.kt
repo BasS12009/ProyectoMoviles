@@ -14,7 +14,6 @@ data class Gift(
     var imageResourceId: Int = 0,
     var rating: Double = 0.0
 ) {
-    // Función para convertir a Map (excluyendo el ID)
     fun toMap(): Map<String, Any> {
         return mapOf(
             "name" to name,
@@ -28,7 +27,6 @@ data class Gift(
     }
 
     companion object {
-        // Conversión desde un DocumentSnapshot
         fun fromDocumentSnapshot(snapshot: DocumentSnapshot): Gift {
             return Gift().apply {
                 id = snapshot.id

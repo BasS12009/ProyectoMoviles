@@ -11,10 +11,8 @@ class GiftsDAO {
         val db = FirebaseFirestore.getInstance()
 
         val documentRef = if (gift.id.isEmpty()) {
-            // Crear nuevo documento con ID automático
             db.collection("Gifts").document()
         } else {
-            // Usar documento existente
             db.collection("Gifts").document(gift.id)
         }
 
