@@ -81,18 +81,7 @@
                     android:textStyle="bold"
                     android:textSize="32sp"/>
 
-                <TextView
-                    android:id="@+id/tv_filters"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/filters"
-                    android:textColor="@color/blue"
-                    android:textColorLink="@color/blue"
-                    android:autoLink="web"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:textAllCaps="false"
-                    android:layout_marginBottom="10dp"/>
+
 
                 <!--Search bar-->
                 <LinearLayout
@@ -127,7 +116,7 @@
                     android:layout_marginBottom="20dp">
 
                     <Button
-                        android:id="@+id/btn_details"
+                        android:id="@+id/linear_layout_categorias"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/store_details"

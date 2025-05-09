@@ -16,7 +16,7 @@ class PlantillaStoreActivity : BaseActivity() {
     var productos = ArrayList<Producto>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_plantilla_store)
+        setContentView(R.layout.activity_category_gift)
 
         cargarProductos()
         setupBottomNavigation()
