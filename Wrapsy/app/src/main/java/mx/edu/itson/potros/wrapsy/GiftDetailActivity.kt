@@ -236,8 +236,6 @@ class GiftDetailActivity : BaseActivity() {
                 startActivity(Intent(this, MoreOptions::class.java))
             }
             setupBottomNavigation()
-            setSelectedItem(R.id.nav_stores)  // Use the correct menu item ID
-
             Log.d("GiftDetailActivity", "UI setup complete")
         } catch (e: Exception) {
             Log.e("GiftDetailActivity", "Error in setupUI", e)
