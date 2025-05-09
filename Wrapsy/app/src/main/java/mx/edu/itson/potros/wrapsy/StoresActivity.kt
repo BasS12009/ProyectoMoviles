@@ -154,10 +154,18 @@ class StoresActivity : BaseActivity() {
     }
 
     private fun navigateToGiftDetail(gift: Gift) {
-        Log.d("StoresActivity", "Navigating to gift detail: ${gift.id}")
-        val intent = Intent(this, GiftDetailActivity::class.java).apply {
-            putExtra("GIFT_ID", gift.id)
+        try {
+            Log.d("CategoryGiftActivity", "Attempting to navigate to gift detail: ${gift.id}")
+            val intent = Intent(this, GiftDetailActivity::class.java).apply {
+                putExtra("GIFT_ID", gift.id)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            Log.d("CategoryGiftActivity", "Intent created with GIFT_ID: ${gift.id}")
+            startActivity(intent)
+            Log.d("CategoryGiftActivity", "startActivity called successfully")
+        } catch (e: Exception) {
+            Log.e("CategoryGiftActivity", "Error navigating to gift detail", e)
+            Toast.makeText(this, "Error opening gift details: ${e.message}", Toast.LENGTH_SHORT).show()
         }
-        startActivity(intent)
     }
 }

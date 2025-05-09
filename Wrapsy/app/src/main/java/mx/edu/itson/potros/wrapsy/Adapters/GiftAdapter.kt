@@ -30,14 +30,8 @@ class GiftAdapter(private val context: Context, private val gifts: MutableList<G
 
         nameTextView?.text = gift.name
 
-        // Load image using Glide or similar library
-        if (gift.imageUrl.isNotEmpty()) {
-            Glide.with(context)
-                .load(gift.imageUrl)
-                .into(imageView!!)
-        } else if (gift.imageResourceId != 0) {
-            imageView?.setImageResource(gift.imageResourceId)
-        }
+        imageView?.setImageResource(gift.imageResourceId)
+
 
         return itemView!!
     }

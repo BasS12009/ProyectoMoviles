@@ -8,7 +8,6 @@ data class Gift(
     var name: String = "",
     var description: String = "",
     var price: Double = 0.0,
-    var imageUrl: String = "",
     var categories: List<String> = listOf(),
     var isFavorite: Boolean = false,
     var imageResourceId: Int = 0,
@@ -19,7 +18,6 @@ data class Gift(
             "name" to name,
             "description" to description,
             "price" to price,
-            "imageUrl" to imageUrl,
             "categories" to categories,
             "isFavorite" to isFavorite,
             "imageResourceId" to imageResourceId
@@ -27,13 +25,13 @@ data class Gift(
     }
 
     companion object {
+        // Conversión desde un DocumentSnapshot
         fun fromDocumentSnapshot(snapshot: DocumentSnapshot): Gift {
             return Gift().apply {
                 id = snapshot.id
                 name = snapshot.getString("name") ?: ""
                 description = snapshot.getString("description") ?: ""
                 price = snapshot.getDouble("price") ?: 0.0
-                imageUrl = snapshot.getString("imageUrl") ?: ""
                 categories = snapshot.get("categories") as? List<String> ?: listOf()
                 isFavorite = snapshot.getBoolean("isFavorite") ?: false
                 imageResourceId = (snapshot.getLong("imageResourceId")?.toInt() ?: 0)

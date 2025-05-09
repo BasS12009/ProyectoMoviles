@@ -6,49 +6,62 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import mx.edu.itson.potros.wrapsy.BasketActivity
 import mx.edu.itson.potros.wrapsy.Entities.Gift
 import mx.edu.itson.potros.wrapsy.GiftDetailActivity
 import mx.edu.itson.potros.wrapsy.R
 
-class GiftBasketAdapter (var context: Context?, var gift: ArrayList<Gift>) : BaseAdapter() {
+
+
+class GiftBasketAdapter(
+    var context: Context?,
+    var gift: ArrayList<Gift>
+) : BaseAdapter() {
+
     override fun getCount(): Int {
         return gift.size
     }
 
-    override fun getItem(p0: Int): Any {
-        return gift[p0]
+    override fun getItem(position: Int): Any {
+        return gift[position]
     }
 
-    override fun getItemId(p0: Int): Long {
-        return p0.toLong()
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
     }
 
-    override fun getView(pe: Int, p1: View?, p2: ViewGroup?): View {
-        var gift = gift[pe]
-        var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        var vista = inflator.inflate(R.layout.item_basket, null)
-        var image: ImageView = vista.findViewById(R.id.image_producto_basket)
-        var title: TextView = vista.findViewById(R.id.titulo_producto_basket)
-        var descripcion: TextView = vista.findViewById(R.id.descripcion_producto_basket)
-        var precio: TextView = vista.findViewById(R.id.precio_producto_basket)
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        var vista = convertView
+        if (vista == null) {
+            val inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            vista = inflater.inflate(R.layout.item_basket, null)
+        }
+
+        val currentGift = getItem(position) as Gift
+        val image: ImageView = vista!!.findViewById(R.id.image_producto_basket)
+        val title: TextView = vista.findViewById(R.id.titulo_producto_basket)
+        val description: TextView = vista.findViewById(R.id.descripcion_producto_basket)
+        val price: TextView = vista.findViewById(R.id.precio_producto_basket)
+        val deleteButton: ImageButton = vista.findViewById(R.id.delete_button_basket)
 
 
-        image.setImageResource(gift.imageResourceId)
-        title.setText(gift.name)
-        descripcion.setText(gift.description)
-        precio.text = String.format("%.2f", gift.price)
+        title.text = currentGift.name
+        description.text = currentGift.description
+        price.text = String.format("%.2f", currentGift.price)
 
+        image.setOnClickListener {
+            val intent = Intent(context, GiftDetailActivity::class.java)
+            intent.putExtra("GIFT_ID", currentGift.id)
+            context!!.startActivity(intent)
+        }
 
-
-        image.setOnClickListener() {
-            val intento = Intent(context, GiftDetailActivity::class.java)
-            intento.putExtra("titulo", gift.name)
-            intento.putExtra("imagen", gift.imageResourceId)
-            intento.putExtra("descripcion", gift.description)
-            intento.putExtra("precio", gift.price)
-            context!!.startActivity(intento)
+        deleteButton.setOnClickListener {
+            if (context is BasketActivity) {
+                (context as BasketActivity).removeItemFromBasket(currentGift)
+            }
         }
 
         return vista

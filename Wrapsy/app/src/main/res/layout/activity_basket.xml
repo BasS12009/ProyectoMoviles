@@ -87,7 +87,7 @@
 
         <!-- GridView para mostrar productos -->
         <GridView
-            android:id="@+id/productos_catalogo"
+            android:id="@+id/basket_list_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

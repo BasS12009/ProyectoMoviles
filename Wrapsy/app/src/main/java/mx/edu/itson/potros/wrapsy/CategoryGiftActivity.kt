@@ -1,13 +1,11 @@
 package mx.edu.itson.potros.wrapsy
 
-import mx.edu.itson.potros.wrapsy.BaseActivity
-import mx.edu.itson.potros.wrapsy.R
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.GridView
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import mx.edu.itson.potros.wrapsy.Adapters.CategoryGiftAdapter
@@ -101,10 +99,18 @@ class CategoryGiftActivity : BaseActivity() {
     }
 
     private fun navigateToGiftDetail(gift: Gift) {
-        Log.d("CategoryGiftActivity", "Navigating to gift detail: ${gift.id}")
-        val intent = Intent(this, GiftDetailActivity::class.java).apply {
-            putExtra("GIFT_ID", gift.id)
+        try {
+            Log.d("CategoryGiftActivity", "Attempting to navigate to gift detail: ${gift.id}")
+            val intent = Intent(this, GiftDetailActivity::class.java).apply {
+                putExtra("GIFT_ID", gift.id)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            Log.d("CategoryGiftActivity", "Intent created with GIFT_ID: ${gift.id}")
+            startActivity(intent)
+            Log.d("CategoryGiftActivity", "startActivity called successfully")
+        } catch (e: Exception) {
+            Log.e("CategoryGiftActivity", "Error navigating to gift detail", e)
+            Toast.makeText(this, "Error opening gift details: ${e.message}", Toast.LENGTH_SHORT).show()
         }
-        startActivity(intent)
     }
 }

@@ -30,14 +30,8 @@ class CategoryGiftAdapter(
         title.text = gift.name
         description.text = gift.description
 
-        if (gift.imageUrl.isNotEmpty()) {
-            Glide.with(context)
-                .load(gift.imageUrl)
-                .transition(DrawableTransitionOptions.withCrossFade())
-                .into(imageView)
-        } else {
-            imageView.setImageResource(gift.imageResourceId)
-        }
+        imageView.setImageResource(gift.imageResourceId)
+
 
         return itemView
     }
