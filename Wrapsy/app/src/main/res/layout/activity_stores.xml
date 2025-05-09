@@ -115,8 +115,8 @@
                     android:gravity="center"
                     android:layout_marginBottom="20dp">
 
-                    <Button
-                        android:id="@+id/linear_layout_categorias"
+                    <TextView
+                        android:id="@+id/btn_details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/store_details"
@@ -133,7 +133,7 @@
                         android:numColumns="3"
                         android:paddingHorizontal="6dp"/>
 
-                    <Button
+                    <TextView
                         android:id="@+id/btn_balloons"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
                         android:numColumns="3"
                         android:paddingHorizontal="6dp"/>
 
-                    <Button
+                    <TextView
                         android:id="@+id/btn_plush_toys"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -169,7 +169,7 @@
                         android:numColumns="3"
                         android:paddingHorizontal="6dp"/>
 
-                    <Button
+                    <TextView
                         android:id="@+id/btn_mugs"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

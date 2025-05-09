@@ -15,9 +15,7 @@
         <activity
             android:name=".producto_card"
             android:exported="false" />
-        <activity
-            android:name=".product_list"
-            android:exported="false" />
+
         <activity
             android:name=".BasketCardConfirmationActivity"
             android:exported="false" />
@@ -43,7 +41,7 @@
             android:name=".ProfileNewList"
             android:exported="false" />
         <activity
-            android:name=".PlantillaStoreActivity"
+            android:name=".CategoryGiftActivity"
             android:exported="false" />
         <activity
             android:name=".ReviewsActivity"

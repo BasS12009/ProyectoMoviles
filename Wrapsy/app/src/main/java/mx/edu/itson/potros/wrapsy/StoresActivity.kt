@@ -1,20 +1,14 @@
 package mx.edu.itson.potros.wrapsy
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import android.widget.GridView
-import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.firestore.FirebaseFirestore
 import mx.edu.itson.potros.wrapsy.Adapters.GiftAdapter
 import mx.edu.itson.potros.wrapsy.DAOs.GiftsDAO
@@ -58,38 +52,46 @@ class StoresActivity : BaseActivity() {
             startActivity(intent)
         }
 
-//        // Setup category headers click listeners
-//        findViewById<Button>(R.id.linear_layout_categorias).setOnClickListener {
-//            val intent = Intent(this, CategoryActivity::class.java).apply {
-//                putExtra("CATEGORY", "details")
-//            }
-//            startActivity(intent)
-//        }
-//
-//        findViewById<Button>(R.id.btn_balloons).setOnClickListener {
-//            val intent = Intent(this, CategoryActivity::class.java).apply {
-//                putExtra("CATEGORY", "balloons")
-//            }
-//            startActivity(intent)
-//        }
-//
-//        findViewById<Button>(R.id.btn_plush_toys).setOnClickListener {
-//            val intent = Intent(this, CategoryActivity::class.java).apply {
-//                putExtra("CATEGORY", "plush toys")
-//            }
-//            startActivity(intent)
-//        }
-//
-//        findViewById<Button>(R.id.btn_mugs).setOnClickListener {
-//            val intent = Intent(this, CategoryActivity::class.java).apply {
-//                putExtra("CATEGORY", "mugs")
-//            }
-//            startActivity(intent)
-//        }
+        // Set up category navigation buttons with IMPROVED category names
+        findViewById<TextView>(R.id.btn_details).setOnClickListener {
+            Log.d("Navigation", "Navigating to details category")
+            navigateToCategory("details")
+        }
+
+        findViewById<TextView>(R.id.btn_balloons).setOnClickListener {
+            Log.d("Navigation", "Navigating to balloons category")
+            navigateToCategory("balloons")
+        }
+
+        findViewById<TextView>(R.id.btn_plush_toys).setOnClickListener {
+            Log.d("Navigation", "Navigating to plush_toys category")
+            navigateToCategory("plush_toys")
+        }
+
+        findViewById<TextView>(R.id.btn_mugs).setOnClickListener {
+            Log.d("Navigation", "Navigating to mugs category")
+            navigateToCategory("mugs")
+        }
 
         setupBottomNavigation()
         setSelectedItem(R.id.nav_stores)
     }
+
+    private fun navigateToCategory(categoryName: String) {
+        // Added debug logging
+        Log.d("StoresActivity", "Navigating to category: $categoryName")
+
+        val intent = Intent(this, CategoryGiftActivity::class.java).apply {
+            putExtra("CATEGORY", categoryName)
+        }
+
+        // Force the activity to start with a new task and clear previous instances
+        // to avoid any potential stack issues
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+
+        startActivity(intent)
+
+        }
 
     private fun loadAllCategories() {
         // Get all gifts to extract all available categories
@@ -101,6 +103,9 @@ class StoresActivity : BaseActivity() {
                     val gift = Gift.fromDocumentSnapshot(document)
                     allCategories.addAll(gift.categories)
                 }
+
+                // Print available categories for debugging
+                Log.d("StoresActivity", "Available categories: $allCategories")
 
                 // Once we have all categories, load gifts for each one
                 loadCategorizedGifts()
@@ -117,46 +122,43 @@ class StoresActivity : BaseActivity() {
         loadCategoryGifts("balloons", findViewById(R.id.gv_productos_balloons))
         loadCategoryGifts("plush_toys", findViewById(R.id.gv_productos_plush_toys))
         loadCategoryGifts("mugs", findViewById(R.id.gv_productos_mugs))
-
     }
 
     private fun loadCategoryGifts(category: String, gridView: GridView) {
         giftsDAO.getGiftsByCategory(category) { gifts ->
             if (gifts.isNotEmpty()) {
-                // Store the gifts in our map
                 categoriesMap[category] = gifts
 
-                // Display up to 3 items in the GridView
                 val adapter = GiftAdapter(
                     this,
                     gifts.take(3).toMutableList()
                 )
                 gridView.adapter = adapter
 
-                // Set click listener for each item
                 gridView.setOnItemClickListener { _, _, position, _ ->
                     val gift = adapter.getItem(position) as Gift
-//                    navigateToGiftDetail(gift)
+                    // Uncomment when GiftDetailActivity is ready
+                    // navigateToGiftDetail(gift)
                 }
             } else {
-                // Hide this category's GridView if no gifts
                 gridView.visibility = View.GONE
 
                 // Find and hide the corresponding header button
                 when (category) {
-                    "details" -> findViewById<Button>(R.id.linear_layout_categorias).visibility = View.GONE
-                    "balloons" -> findViewById<Button>(R.id.btn_balloons).visibility = View.GONE
-                    "plush toys" -> findViewById<Button>(R.id.btn_plush_toys).visibility = View.GONE
-                    "mugs" -> findViewById<Button>(R.id.btn_mugs).visibility = View.GONE
+                    "details" -> findViewById<TextView>(R.id.btn_details).visibility = View.GONE
+                    "balloons" -> findViewById<TextView>(R.id.btn_balloons).visibility = View.GONE
+                    "plush_toys" -> findViewById<TextView>(R.id.btn_plush_toys).visibility = View.GONE
+                    "mugs" -> findViewById<TextView>(R.id.btn_mugs).visibility = View.GONE
                 }
             }
         }
     }
 
-//    private fun navigateToGiftDetail(gift: Gift) {
-//        val intent = Intent(this, GiftDetailActivity::class.java).apply {
-//            putExtra("GIFT_ID", gift.id)
-//        }
-//        startActivity(intent)
-//    }
+    // Uncomment when GiftDetailActivity is ready
+    // private fun navigateToGiftDetail(gift: Gift) {
+    //     val intent = Intent(this, GiftDetailActivity::class.java).apply {
+    //         putExtra("GIFT_ID", gift.id)
+    //     }
+    //     startActivity(intent)
+    // }
 }

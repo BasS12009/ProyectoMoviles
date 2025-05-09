@@ -13,10 +13,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import mx.edu.itson.potros.wrapsy.Entities.Gift
 
 class BasketActivity : BaseActivity(){
-    var adapter: ProductoAdapterBasket? = null
-    var productos = ArrayList<Producto>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,31 +25,26 @@ class BasketActivity : BaseActivity(){
         val btnPayOrder: Button = findViewById(R.id.btn_pay_order)
 
         setupBottomNavigation()
-        cargarProductos()
+
 
         btnPayOrder.setOnClickListener() {
             val intent = Intent(this, ChooseCardActivity::class.java)
             startActivity(intent)
         }
 
-        adapter = ProductoAdapterBasket( this, productos)
+
         var gridProducto: GridView = findViewById(R.id.productos_catalogo)
 
-        gridProducto.adapter = adapter
     }
-    fun cargarProductos(){
-        productos.add(Producto("Anastasia Beverly Hills", R.drawable.velvet_lipstick,"Lip velvet liquid lipstick",200.5))
 
-
-    }
 }
-class ProductoAdapterBasket(var context: Context?, var producto: ArrayList<Producto>) : BaseAdapter() {
+class ProductoAdapterBasket(var context: Context?, var gift: ArrayList<Gift>) : BaseAdapter() {
     override fun getCount(): Int {
-        return producto.size
+        return gift.size
     }
 
     override fun getItem(p0: Int): Any {
-        return producto[p0]
+        return gift[p0]
     }
 
     override fun getItemId(p0: Int): Long {
@@ -57,7 +52,7 @@ class ProductoAdapterBasket(var context: Context?, var producto: ArrayList<Produ
     }
 
     override fun getView(pe: Int, p1: View?, p2: ViewGroup?): View {
-        var producto = producto[pe]
+        var gift = gift[pe]
         var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         var vista = inflator.inflate(R.layout.producto_basket, null)
         var image: ImageView = vista.findViewById(R.id.image_producto_basket)
@@ -66,19 +61,19 @@ class ProductoAdapterBasket(var context: Context?, var producto: ArrayList<Produ
         var precio: TextView = vista.findViewById(R.id.precio_producto_basket)
 
 
-        image.setImageResource(producto.image)
-        title.setText(producto.titulo)
-        descripcion.setText(producto.descripcion)
-        precio.text = String.format("%.2f", producto.precio)
+        image.setImageResource(gift.imageResourceId)
+        title.setText(gift.name)
+        descripcion.setText(gift.description)
+        precio.text = String.format("%.2f", gift.price)
 
 
 
         image.setOnClickListener() {
             val intento = Intent(context, ProductDetailActivity::class.java)
-            intento.putExtra("titulo", producto.titulo)
-            intento.putExtra("imagen", producto.image)
-            intento.putExtra("descripcion", producto.descripcion)
-            intento.putExtra("precio", producto.precio)
+            intento.putExtra("titulo", gift.name)
+            intento.putExtra("imagen", gift.imageResourceId)
+            intento.putExtra("descripcion", gift.description)
+            intento.putExtra("precio", gift.price)
             context!!.startActivity(intento)
         }
 
