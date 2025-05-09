@@ -6,7 +6,7 @@ android:orientation="vertical"
 android:background="#FFFEE8"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".ProfileEditProfile">
+tools:context=".ProfileNewList">
 
 <ScrollView
     android:layout_width="match_parent"
@@ -93,7 +93,7 @@ tools:context=".ProfileEditProfile">
                 android:textColor="#4C4C4C" />
 
             <EditText
-                android:id="@+id/list_name_edittext"
+                android:id="@+id/et_list_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name here..."
@@ -101,15 +101,6 @@ tools:context=".ProfileEditProfile">
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_backkground_white"
                 android:padding="12dp" />
-
-
-
-
-
-
-
-
-
 
 
         </LinearLayout>
