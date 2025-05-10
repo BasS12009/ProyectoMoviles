@@ -1,6 +1,7 @@
 package mx.edu.itson.potros.wrapsy.DAOs
 
 import android.util.Log
+import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
 import mx.edu.itson.potros.wrapsy.Entities.Gift
 import mx.edu.itson.potros.wrapsy.R
@@ -43,6 +44,18 @@ class GiftsDAO {
             .addOnFailureListener {
                 Log.e("Firestore", "Error obteniendo", it)
                 onSuccess(null)
+            }
+    }
+
+    fun getGiftsByIds(giftIds: List<String>, onSuccess: (List<Gift>) -> Unit) {
+        if (giftIds.isEmpty()) return onSuccess(emptyList())
+
+        FirebaseFirestore.getInstance().collection("Gifts")
+            .whereIn(FieldPath.documentId(), giftIds)
+            .get()
+            .addOnSuccessListener { result ->
+                val gifts = result.map { Gift.fromDocumentSnapshot(it) }
+                onSuccess(gifts)
             }
     }
 
