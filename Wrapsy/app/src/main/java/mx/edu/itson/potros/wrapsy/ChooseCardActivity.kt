@@ -21,6 +21,7 @@ class ChooseCardActivity : BaseActivity() {
 
         setupBottomNavigation()
 
+
         val btnAddCard: TextView = findViewById(R.id.btn_add_card)
 
         btnAddCard.setOnClickListener({

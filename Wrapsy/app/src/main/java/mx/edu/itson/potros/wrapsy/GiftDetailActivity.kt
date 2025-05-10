@@ -48,9 +48,11 @@ class GiftDetailActivity : BaseActivity() {
         sharedPreferences = getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
 
         giftsDAO = GiftsDAO()
-        setupUI()
         initializeViews()
         setupRecyclerView()
+
+        setupBottomNavigation()
+        setupTopBarNavigation()
 
         // Add debug log
         Log.d("GiftDetailActivity", "Activity created, loading gift details...")
@@ -71,16 +73,10 @@ class GiftDetailActivity : BaseActivity() {
 
             addToBasketButton.setOnClickListener {
                 try {
-                    if (::currentGift.isInitialized) {
+
                         addToBasket(currentGift)
                         Toast.makeText(this, "Added to basket!", Toast.LENGTH_SHORT).show()
 
-                        val intent = Intent(this, BasketActivity::class.java)
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, "Error: Gift details not loaded yet.", Toast.LENGTH_SHORT).show()
-                        Log.e("GiftDetailActivity", "addToBasket called before currentGift was initialized")
-                    }
                 } catch (e: Exception) {
                     Log.e("GiftDetailActivity", "Error adding to basket", e)
                     Toast.makeText(this, "Error adding to basket: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -230,24 +226,6 @@ class GiftDetailActivity : BaseActivity() {
             Log.e("GiftDetailActivity", "Error updating UI", e)
             // Try to continue without crashing the app
             Toast.makeText(this, "Error displaying some content: ${e.message}", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun setupUI() {
-        try {
-            findViewById<ImageView>(R.id.btn_basket).setOnClickListener {
-                startActivity(Intent(this, BasketActivity::class.java))
-            }
-            findViewById<ImageView>(R.id.btn_notificaciones).setOnClickListener {
-                startActivity(Intent(this, NotificationsActivity::class.java))
-            }
-            findViewById<ImageView>(R.id.more_options).setOnClickListener {
-                startActivity(Intent(this, MoreOptions::class.java))
-            }
-            setupBottomNavigation()
-            Log.d("GiftDetailActivity", "UI setup complete")
-        } catch (e: Exception) {
-            Log.e("GiftDetailActivity", "Error in setupUI", e)
         }
     }
 
