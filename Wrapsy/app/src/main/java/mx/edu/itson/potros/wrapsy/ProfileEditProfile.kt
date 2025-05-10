@@ -3,17 +3,23 @@ package mx.edu.itson.potros.wrapsy
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
@@ -25,6 +31,7 @@ class ProfileEditProfile : BaseActivity() {
     private lateinit var profileImage: ImageView
     private lateinit var usernameEditText: EditText
     private lateinit var btnSave: Button
+    private lateinit var tvEmailDisplay: TextView
 
     private var selectedImageUri: Uri? = null
 
@@ -33,7 +40,6 @@ class ProfileEditProfile : BaseActivity() {
         setContentView(R.layout.activity_profile_edit_profile)
 
         setupBottomNavigation()
-        setSelectedItem(R.id.nav_profile)
 
         auth = FirebaseAuth.getInstance()
         storageRef = FirebaseStorage.getInstance().reference
@@ -42,6 +48,13 @@ class ProfileEditProfile : BaseActivity() {
         profileImage = findViewById(R.id.profile_image)
         usernameEditText = findViewById(R.id.username_edittext)
         btnSave = findViewById(R.id.btn_logout)
+        tvEmailDisplay = findViewById(R.id.tv_email_display)
+
+        // Mostrar el correo electrónico del usuario actual
+        loadCurrentUserEmail()
+
+        // Cargar el nombre de usuario actual al abrir la pantalla
+        loadCurrentUserProfile()
 
 
         profileImage.setOnClickListener {
@@ -84,6 +97,33 @@ class ProfileEditProfile : BaseActivity() {
                         Toast.makeText(this, "Nombre actualizado", Toast.LENGTH_SHORT).show()
                     }
             }
+        }
+    }
+
+    private fun loadCurrentUserEmail() {
+        val currentUser: FirebaseUser? = auth.currentUser
+        if (currentUser != null) {
+            tvEmailDisplay.text = currentUser.email
+        } else {
+            tvEmailDisplay.text = "No se pudo cargar el correo"
+        }
+    }
+
+    private fun loadCurrentUserProfile() {
+        val uid = auth.currentUser?.uid
+        uid?.let {
+            databaseRef.child("users").child(it).child("username")
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val currentUsername = snapshot.getValue(String::class.java)
+                        usernameEditText.setText(currentUsername)
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        Log.e("DB_ERROR", "Error al cargar el nombre de usuario", error.toException())
+                        Toast.makeText(this@ProfileEditProfile, "Error al cargar el nombre", Toast.LENGTH_SHORT).show()
+                    }
+                })
         }
     }
 
