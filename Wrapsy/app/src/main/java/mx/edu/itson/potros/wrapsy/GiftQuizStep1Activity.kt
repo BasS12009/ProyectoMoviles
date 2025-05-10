@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 class GiftQuizStep1Activity : AppCompatActivity() {
 
+    private var selectedPreferenceButton: Button? = null // Para rastrear el botón seleccionado
     private var selectedPreference1 = ""
     private lateinit var mDatabase: DatabaseReference
 
@@ -31,21 +32,21 @@ class GiftQuizStep1Activity : AppCompatActivity() {
         val btnPreference3 = findViewById<Button>(R.id.btnPreference3)
         val btnPreference4 = findViewById<Button>(R.id.btnPreference4)
 
-        btnPreference1.setOnClickListener {
-            selectedPreference1 = "A gift you can use frequently"
+        val preferenceButtons = listOf(btnPreference1, btnPreference2, btnPreference3, btnPreference4)
+
+        preferenceButtons.forEach { button ->
+            button.setOnClickListener {
+                // Deseleccionar el botón previamente seleccionado
+                selectedPreferenceButton?.apply {
+                    animate().alpha(1.0f).setDuration(200).start()
+                }
+                // Seleccionar el botón actual
+                button.animate().alpha(0.7f).setDuration(200).start()
+                selectedPreferenceButton = button
+                selectedPreference1 = button.text.toString() // Guardar la preferencia
+            }
         }
 
-        btnPreference2.setOnClickListener {
-            selectedPreference1 = "A special gift for specific occasions"
-        }
-
-        btnPreference3.setOnClickListener {
-            selectedPreference1 = "A memorable experience"
-        }
-
-        btnPreference4.setOnClickListener {
-            selectedPreference1 = "Something personalized and unique"
-        }
 
         btnCancel.setOnClickListener {
             val intent = Intent(this, StoresActivity::class.java)

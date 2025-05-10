@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wrapsy"
         tools:targetApi="31">
+
         <activity
             android:name=".producto_card"
             android:exported="false" />
-
         <activity
             android:name=".BasketCardConfirmationActivity"
             android:exported="false" />

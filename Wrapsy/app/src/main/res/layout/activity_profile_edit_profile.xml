@@ -75,13 +75,13 @@
                     android:src="@drawable/profile_john" />
 
                 <TextView
-                    android:id="@+id/tv_username"
+                    android:id="@+id/tv_email_display"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/profile_image"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:text="John Felix"
+                    android:text="EMAIL!"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="#4C4C4C" />

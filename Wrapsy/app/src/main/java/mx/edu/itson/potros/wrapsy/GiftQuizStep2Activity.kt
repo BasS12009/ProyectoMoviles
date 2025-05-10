@@ -14,6 +14,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class GiftQuizStep2Activity : AppCompatActivity() {
+    private var selectedOccasionButton: Button? = null
+    private var selectedColorButton: Button? = null
     private var selectedOccasion = ""
     private var selectedColor = ""
     private lateinit var mDatabase: DatabaseReference
@@ -37,44 +39,29 @@ class GiftQuizStep2Activity : AppCompatActivity() {
         val btnPurple = findViewById<Button>(R.id.btnPurple)
         val btnBlack = findViewById<Button>(R.id.btnBlack)
 
-        btnOccasion1.setOnClickListener {
-            selectedOccasion = "Birthday"
+        val occasionButtons = listOf(btnOccasion1, btnOccasion2, btnOccasion3, btnOccasion4)
+        val colorButtons = listOf(btnBlue, btnRed, btnPink, btnOrange, btnPurple, btnBlack)
+
+        occasionButtons.forEach { button ->
+            button.setOnClickListener {
+                selectedOccasionButton?.apply {
+                    animate().alpha(1.0f).setDuration(200).start()
+                }
+                button.animate().alpha(0.7f).setDuration(200).start()
+                selectedOccasionButton = button
+                selectedOccasion = button.text.toString()
+            }
         }
 
-        btnOccasion2.setOnClickListener {
-            selectedOccasion = "Anniversary"
-        }
-
-        btnOccasion3.setOnClickListener {
-            selectedOccasion = "Holiday"
-        }
-
-        btnOccasion4.setOnClickListener {
-            selectedOccasion = "No special occasion"
-        }
-
-        btnBlue.setOnClickListener {
-            selectedColor = "Blue"
-        }
-
-        btnRed.setOnClickListener {
-            selectedColor = "Red"
-        }
-
-        btnPink.setOnClickListener {
-            selectedColor = "Pink"
-        }
-
-        btnOrange.setOnClickListener {
-            selectedColor = "Orange"
-        }
-
-        btnPurple.setOnClickListener {
-            selectedColor = "Purple"
-        }
-
-        btnBlack.setOnClickListener {
-            selectedColor = "Black"
+        colorButtons.forEach { button ->
+            button.setOnClickListener {
+                selectedColorButton?.apply {
+                    animate().alpha(1.0f).setDuration(200).start()
+                }
+                button.animate().alpha(0.7f).setDuration(200).start()
+                selectedColorButton = button
+                selectedColor = button.text.toString()
+            }
         }
 
         btnBack.setOnClickListener {

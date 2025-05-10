@@ -71,10 +71,16 @@ class GiftDetailActivity : BaseActivity() {
 
             addToBasketButton.setOnClickListener {
                 try {
-                    addToBasket(currentGift)
-                    Toast.makeText(this, "Added to basket!", Toast.LENGTH_SHORT).show()
-                    // Don't immediately navigate to the basket - let the user see the confirmation
-                    // Only navigate if explicitly requested
+                    if (::currentGift.isInitialized) {
+                        addToBasket(currentGift)
+                        Toast.makeText(this, "Added to basket!", Toast.LENGTH_SHORT).show()
+
+                        val intent = Intent(this, BasketActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this, "Error: Gift details not loaded yet.", Toast.LENGTH_SHORT).show()
+                        Log.e("GiftDetailActivity", "addToBasket called before currentGift was initialized")
+                    }
                 } catch (e: Exception) {
                     Log.e("GiftDetailActivity", "Error adding to basket", e)
                     Toast.makeText(this, "Error adding to basket: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -90,6 +96,8 @@ class GiftDetailActivity : BaseActivity() {
             Log.e("GiftDetailActivity", "Error initializing views", e)
         }
     }
+
+
 
     private fun addToBasket(gift: Gift) {
         try {
@@ -237,8 +245,6 @@ class GiftDetailActivity : BaseActivity() {
                 startActivity(Intent(this, MoreOptions::class.java))
             }
             setupBottomNavigation()
-            setSelectedItem(R.id.nav_stores)  // Use the correct menu item ID
-
             Log.d("GiftDetailActivity", "UI setup complete")
         } catch (e: Exception) {
             Log.e("GiftDetailActivity", "Error in setupUI", e)

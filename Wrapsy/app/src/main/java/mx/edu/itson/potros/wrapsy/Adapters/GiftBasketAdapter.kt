@@ -2,6 +2,7 @@ package mx.edu.itson.potros.wrapsy.Adapters
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +22,13 @@ class GiftBasketAdapter(
     var gift: ArrayList<Gift>
 ) : BaseAdapter() {
 
+    init {
+        Log.d("GiftBasketAdapter", "Adapter initialized with ${gift.size} items.")
+    }
+
+
     override fun getCount(): Int {
+        Log.d("GiftBasketAdapter", "getCount() called, returning ${gift.size}")
         return gift.size
     }
 

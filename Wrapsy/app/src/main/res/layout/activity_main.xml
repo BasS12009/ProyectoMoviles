@@ -37,7 +37,7 @@ tools:context=".MainActivity">
         android:id="@+id/txtLoginInstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Slogan"
+        android:text="Sign up or login to start"
         android:textColor="#333333"
         android:textSize="16sp" />
 </LinearLayout>
