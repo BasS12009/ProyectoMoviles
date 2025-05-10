@@ -14,6 +14,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class GiftQuizStep3Activity : AppCompatActivity() {
+    private var selectedBudgetButton: Button? = null // Para rastrear el botón de presupuesto seleccionado
+    private var selectedWrappingButton: Button? = null // Para rastrear el botón de envoltorio seleccionado
     private var selectedBudget = ""
     private var selectedWrapping = ""
     private lateinit var mDatabase: DatabaseReference
@@ -34,32 +36,29 @@ class GiftQuizStep3Activity : AppCompatActivity() {
         val btnGiftWrap = findViewById<Button>(R.id.btnGiftWrap)
         val btnNoWrapping = findViewById<Button>(R.id.btnNoWrapping)
 
-        btnPreference1.setOnClickListener {
-            selectedBudget = "Affordable"
+        val budgetButtons = listOf(btnPreference1, btnPreference2, btnPreference3)
+        val wrappingButtons = listOf(btnBag, btnBox, btnGiftWrap, btnNoWrapping)
+
+        budgetButtons.forEach { button ->
+            button.setOnClickListener {
+                selectedBudgetButton?.apply {
+                    animate().alpha(1.0f).setDuration(200).start()
+                }
+                button.animate().alpha(0.7f).setDuration(200).start()
+                selectedBudgetButton = button
+                selectedBudget = button.text.toString()
+            }
         }
 
-        btnPreference2.setOnClickListener {
-            selectedBudget = "Moderate"
-        }
-
-        btnPreference3.setOnClickListener {
-            selectedBudget = "Price doesn't matter"
-        }
-
-        btnBag.setOnClickListener {
-            selectedWrapping = "Bag"
-        }
-
-        btnBox.setOnClickListener {
-            selectedWrapping = "Box"
-        }
-
-        btnGiftWrap.setOnClickListener {
-            selectedWrapping = "Gift wrap"
-        }
-
-        btnNoWrapping.setOnClickListener {
-            selectedWrapping = "No wrapping"
+        wrappingButtons.forEach { button ->
+            button.setOnClickListener {
+                selectedWrappingButton?.apply {
+                    animate().alpha(1.0f).setDuration(200).start()
+                }
+                button.animate().alpha(0.7f).setDuration(200).start()
+                selectedWrappingButton = button
+                selectedWrapping = button.text.toString()
+            }
         }
 
         btnBack.setOnClickListener {
