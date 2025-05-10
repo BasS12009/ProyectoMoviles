@@ -9,16 +9,21 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.launch
 import mx.edu.itson.potros.wrapsy.Adapters.CommentAdapter
 import mx.edu.itson.potros.wrapsy.DAOs.GiftsDAO
 import mx.edu.itson.potros.wrapsy.Entities.Comment
 import mx.edu.itson.potros.wrapsy.Entities.Gift
+import mx.edu.itson.potros.wrapsy.data.BasketDAO
 import java.util.Date
 
 class GiftDetailActivity : BaseActivity() {
@@ -29,6 +34,7 @@ class GiftDetailActivity : BaseActivity() {
     private lateinit var commentsRecycler: RecyclerView
     private lateinit var commentAdapter: CommentAdapter
     private lateinit var sharedPreferences: SharedPreferences
+    private val basketDAO = BasketDAO()
     private val gson = Gson()
 
     // UI Elements
@@ -39,6 +45,7 @@ class GiftDetailActivity : BaseActivity() {
     private lateinit var giftRatingTextView: TextView
     private lateinit var addToBasketButton: Button
     private lateinit var saveItemLink: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,28 +103,32 @@ class GiftDetailActivity : BaseActivity() {
 
 
     private fun addToBasket(gift: Gift) {
-        try {
-            // No need to check if initialized since we initialize in onCreate
-            val basketListJson = sharedPreferences.getString("basket_items", null)
-            val basketList = if (basketListJson.isNullOrEmpty()) {
-                Log.d("GiftDetailActivity", "Creating new basket list")
-                mutableListOf<Gift>()
-            } else {
-                Log.d("GiftDetailActivity", "Loading existing basket list: $basketListJson")
-                val type = object : TypeToken<MutableList<Gift>>() {}.type
-                gson.fromJson(basketListJson, type)
+        Log.d("GiftDetailActivity", "addToBasket() called with gift ID: ${gift.id}")
+        lifecycleScope.launch {
+            try {
+                val userId = getCurrentUserId()
+
+                if (userId.isNotEmpty() && gift.id.isNotEmpty()) {
+                    val isAdded = basketDAO.addGiftToBasket(userId, gift.id)
+                    if (isAdded) {
+                        Log.d("GiftDetailActivity", "Gift with ID ${gift.id} added to basket in Firestore for user $userId")
+                    } else {
+                        Log.e("GiftDetailActivity", "Failed to add gift with ID ${gift.id} to basket in Firestore for user $userId")
+                    }
+                } else {
+                    Log.e("GiftDetailActivity", "User ID or Gift ID not available, cannot add to basket in Firestore (User ID: $userId, Gift ID: ${gift.id})")
+                }
+
+            } catch (e: Exception) {
+                Log.e("GiftDetailActivity", "Exception in addToBasket (Firestore): ${e.message}", e)
             }
-
-            basketList.add(gift)
-            Log.d("GiftDetailActivity", "Added ${gift.name} to basket, total items: ${basketList.size}")
-
-            val updatedBasketListJson = gson.toJson(basketList)
-            sharedPreferences.edit().putString("basket_items", updatedBasketListJson).apply()
-            Log.d("GiftDetailActivity", "Saved updated basket to preferences")
-        } catch (e: Exception) {
-            Log.e("GiftDetailActivity", "Exception in addToBasket", e)
-            throw e // Rethrow to handle in the caller
         }
+    }
+
+
+    private fun getCurrentUserId(): String {
+        val currentUser: FirebaseUser? = FirebaseAuth.getInstance().currentUser
+        return currentUser?.uid ?: ""
     }
 
     private fun setupRecyclerView() {

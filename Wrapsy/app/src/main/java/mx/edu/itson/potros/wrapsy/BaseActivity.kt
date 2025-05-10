@@ -47,7 +47,6 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    // Resalta el ítem correspondiente a la actividad actual
     protected fun setSelectedItem(itemId: Int) {
         findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId = itemId;
     }
