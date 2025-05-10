@@ -1,5 +1,6 @@
 package mx.edu.itson.potros.wrapsy
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -38,7 +39,8 @@ class BasketActivity : BaseActivity() {
         Log.d("BasketActivity", "Views initialized")
 
         btnPayOrder.setOnClickListener {
-            //
+            val intent = Intent(this@BasketActivity, BasketTotalActivity::class.java)
+            startActivity(intent)
         }
     }
 
