@@ -1,6 +1,8 @@
 package mx.edu.itson.potros.wrapsy
 
 import android.content.Intent
+import android.widget.ImageView
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -48,5 +50,24 @@ open class BaseActivity : AppCompatActivity() {
     // Resalta el ítem correspondiente a la actividad actual
     protected fun setSelectedItem(itemId: Int) {
         findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId = itemId;
+    }
+
+    protected fun setupTopBarNavigation() {
+        val topBar = findViewById<RelativeLayout>(R.id.top_bar)
+        val basketIconImageView: ImageView? = topBar?.findViewById(R.id.basketIcon)
+        val menuIconImageView: ImageView? = topBar?.findViewById(R.id.menuIcon)
+        val optionsImageView: ImageView? = topBar?.findViewById(R.id.options)
+
+        basketIconImageView?.setOnClickListener {
+            startActivity(Intent(this, BasketActivity::class.java))
+        }
+
+        menuIconImageView?.setOnClickListener {
+            startActivity(Intent(this, NotificationsActivity::class.java))
+        }
+
+        optionsImageView?.setOnClickListener {
+            startActivity(Intent(this, MoreOptions::class.java))
+        }
     }
 }

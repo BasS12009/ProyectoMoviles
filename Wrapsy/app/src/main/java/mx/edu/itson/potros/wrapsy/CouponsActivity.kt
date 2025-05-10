@@ -23,7 +23,6 @@ class CouponsActivity : BaseActivity() {
 
 
         setupBottomNavigation()
-        setSelectedItem(R.id.nav_coupons)
         setupViews()
         fetchCoupons()
     }
