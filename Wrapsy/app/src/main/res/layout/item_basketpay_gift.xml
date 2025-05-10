@@ -2,16 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="10dp"
         >
         <ImageView
-            android:id="@+id/image_producto_basket"
+            android:id="@+id/iv_basketpay_gift_image"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -25,7 +27,7 @@
             android:layout_marginStart="20dp"
             android:layout_gravity="center_vertical">
             <TextView
-                android:id="@+id/titulo_producto_basket"
+                android:id="@+id/tv_basketpay_gift_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Anastasia Beverly Hills"
@@ -35,7 +37,7 @@
                 android:textColor="@color/black"
                 />
             <TextView
-                android:id="@+id/descripcion_producto_basket"
+                android:id="@+id/tv_basketpay_gift_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lip velvet liquid lipstick"
@@ -45,26 +47,16 @@
                 android:textColor="@color/black"
                 />
             <TextView
-                android:id="@+id/precio_producto_basket"
+                android:id="@+id/tv_basketpay_gift_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="300"
+                android:text="$300"
                 android:textSize="17sp"
                 android:layout_gravity="start"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/black"
                 />
         </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/delete_button_basket"
-            android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:layout_marginStart="20dp"
-            app:srcCompat="@drawable/ic_delete" />
 
 
     </LinearLayout>
