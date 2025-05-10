@@ -168,4 +168,9 @@ class StoresActivity : BaseActivity() {
             Toast.makeText(this, "Error opening gift details: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("StoresActivity", "onResume called")
+    }
 }
