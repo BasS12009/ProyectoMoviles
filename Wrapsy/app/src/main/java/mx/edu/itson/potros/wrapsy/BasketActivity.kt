@@ -4,8 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ListView
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.GridView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import mx.edu.itson.potros.wrapsy.Adapters.GiftBasketAdapter
@@ -14,7 +13,7 @@ import mx.edu.itson.potros.wrapsy.Entities.Gift
 class BasketActivity : BaseActivity() {
 
     private lateinit var btnPayOrder: Button
-    private lateinit var basketListView: ListView
+    private lateinit var basketListView: GridView
     private lateinit var giftBasketAdapter: GiftBasketAdapter
     private lateinit var sharedPreferences: SharedPreferences
     private val gson = Gson()
