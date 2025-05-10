@@ -85,10 +85,10 @@ class BasketCardConfirmationActivity : BaseActivity() {
             userId = userId
         )
 
-        // Guardar purchase
+
         purchaseDao.savePurchase(purchase,
             onSuccess = {
-                // Vaciar canasta
+
                 basketDoc.reference.update("gift_ids", emptyList<String>())
                     .addOnSuccessListener {
                         redirectToConfirmation()
