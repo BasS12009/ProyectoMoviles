@@ -7,7 +7,7 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.gson.Gson
 
 data class Basket(
-    var id: String = "", 
+    var id: String = "",
     var userId: String = "",
     val giftIds: MutableList<String> = mutableListOf(),
     var totalPrice: Double = 0.0

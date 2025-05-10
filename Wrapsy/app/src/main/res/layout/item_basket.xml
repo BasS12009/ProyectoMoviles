@@ -13,7 +13,7 @@
         <ImageView
             android:id="@+id/image_producto_basket"
             android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:layout_gravity="center"
             android:scaleType="fitXY"
             android:src="@drawable/velvet_lipstick"/>
@@ -60,6 +60,7 @@
             android:id="@+id/delete_button_basket"
             android:background="@android:color/transparent"
             android:layout_width="wrap_content"
+            android:backgroundTint="@color/verdeOlivo"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"

@@ -12,7 +12,7 @@ class BasketDAO {
     private val firestore = FirebaseFirestore.getInstance()
     private val basketsCollection = firestore.collection("Basket")
     private val giftsCollection = firestore.collection("Gifts") // Asumiendo una colección separada para Gifts
-    private val TAG = "BasketDao"
+    private val TAG = "BasketDAO"
 
     suspend fun addGiftToBasket(userId: String, giftId: String): Boolean {
         return try {
@@ -35,9 +35,67 @@ class BasketDAO {
             false
         }
     }
+    suspend fun getBasketForUser(userId: String): Basket? {
+        return try {
+            val querySnapshot = basketsCollection.whereEqualTo("userId", userId).limit(1).get().await()
 
-    // Función para eliminar la ID de un Gift del carrito de un usuario
-    suspend fun removeGiftFromBasket(userId: String, giftIdToRemove: String): Boolean {
+            if (!querySnapshot.isEmpty) {
+                val document = querySnapshot.documents[0]
+                Basket.fromDocumentSnapshot(document)
+            } else {
+                Log.i(TAG, "No basket found for user $userId")
+                null
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error getting basket for user $userId", e)
+            null
+        }
+    }
+    suspend fun getGiftById(giftId: String): Gift? {
+        return try {
+            val document = giftsCollection.document(giftId).get().await()
+            if (document.exists()) {
+                Gift.fromDocumentSnapshot(document)
+            } else {
+                Log.w(TAG, "Gift with ID $giftId not found in database")
+                null
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error getting gift with ID $giftId", e)
+            null
+        }
+    }
+
+    suspend fun getAllGiftsInBasketForUser(userId: String): List<Gift> {
+        return try {
+            val querySnapshot = basketsCollection.whereEqualTo("userId", userId).limit(1).get().await()
+
+            if (!querySnapshot.isEmpty) {
+                val basketDocument = querySnapshot.documents[0]
+                val existingBasket = Basket.fromDocumentSnapshot(basketDocument)
+                val giftIdsInBasket = existingBasket.giftIds
+
+                val gifts: MutableList<Gift> = mutableListOf()
+                if (giftIdsInBasket.isNotEmpty()) {
+                    val giftsQuerySnapshot = giftsCollection.whereIn("id", giftIdsInBasket).get().await()
+                    for (doc in giftsQuerySnapshot.documents) {
+                        val gift = Gift.fromDocumentSnapshot(doc)
+                        gift?.let { gifts.add(it) }
+                    }
+                }
+                gifts
+            } else {
+                Log.i(TAG, "No basket found for user $userId, returning empty list of gifts.")
+                emptyList()
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error getting all gifts in basket for user $userId", e)
+            emptyList()
+        }
+    }
+
+
+    suspend fun removeGiftIdFromBasket(userId: String, giftIdToRemove: String): Boolean {
         return try {
             val querySnapshot = basketsCollection.whereEqualTo("userId", userId).limit(1).get().await()
 
@@ -46,7 +104,22 @@ class BasketDAO {
                 val existingBasket = Basket.fromDocumentSnapshot(basketDocument)
                 val initialSize = existingBasket.giftIds.size
                 existingBasket.giftIds.removeAll { it == giftIdToRemove }
+
                 if (existingBasket.giftIds.size < initialSize) {
+                    // Recalcular el precio total (opcional, depende de cómo lo manejes)
+                    var newTotalPrice = 0.0
+                    if (existingBasket.giftIds.isNotEmpty()) {
+                        // Necesitas consultar la colección de Gifts para obtener los precios
+                        val giftsQuerySnapshot = firestore.collection("gifts")
+                            .whereIn("id", existingBasket.giftIds)
+                            .get()
+                            .await()
+                        newTotalPrice = giftsQuerySnapshot.documents.sumOf {
+                            it.getDouble("price") ?: it.getLong("price")?.toDouble() ?: 0.0
+                        }
+                    }
+                    existingBasket.totalPrice = newTotalPrice
+
                     val updatedBasketMap = existingBasket.toMap()
                     basketsCollection.document(basketDocument.id).set(updatedBasketMap).await()
                     true
@@ -61,36 +134,6 @@ class BasketDAO {
         } catch (e: Exception) {
             Log.e(TAG, "Error removing gift ID $giftIdToRemove from basket for user $userId", e)
             false
-        }
-    }
-
-    // Función para obtener todos los Gifts del carrito de un usuario (requiere consulta adicional)
-    suspend fun getAllGiftsInBasketForUser(userId: String): List<Gift> {
-        return try {
-            val querySnapshot = basketsCollection.whereEqualTo("userId", userId).limit(1).get().await()
-
-            if (!querySnapshot.isEmpty) {
-                val basketDocument = querySnapshot.documents[0]
-                val existingBasket = Basket.fromDocumentSnapshot(basketDocument)
-                val giftIdsInBasket = existingBasket.giftIds
-
-                // Consultar la colección de Gifts para obtener los detalles basados en los IDs
-                val gifts: MutableList<Gift> = mutableListOf()
-                if (giftIdsInBasket.isNotEmpty()) { // Only query if there are giftIds
-                    val giftsQuerySnapshot = giftsCollection.whereIn("id", giftIdsInBasket).get().await()
-                    for (doc in giftsQuerySnapshot.documents) {
-                        val gift = Gift.fromDocumentSnapshot(doc) // Asegúrate de tener esta función en Gift
-                        gift?.let { gifts.add(it) }
-                    }
-                }
-                gifts
-            } else {
-                Log.i(TAG, "No basket found for user $userId, returning empty list of gifts.")
-                emptyList()
-            }
-        } catch (e: Exception) {
-            Log.e(TAG, "Error getting all gifts in basket for user $userId", e)
-            emptyList()
         }
     }
 }

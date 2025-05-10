@@ -20,6 +20,7 @@ class OrderDetailsActivity : BaseActivity() {
         setContentView(R.layout.activity_order_details)
 
         setupBottomNavigation()
+        setupTopBarNavigation()
         setSelectedItem(R.id.nav_orders)
 
         llGifts = findViewById(R.id.ll_gifts)

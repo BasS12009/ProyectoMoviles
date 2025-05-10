@@ -10,47 +10,10 @@
     tools:context=".BasketActivity">
 
     <!-- Barra superior con iconos -->
-    <RelativeLayout
+    <include
+        layout="@layout/top_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/basketIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:padding="8dp"
-            android:background="@drawable/circleyellow"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_shopping_basket"
-            android:contentDescription="Shopping basket" />
-
-        <ImageView
-            android:id="@+id/menuIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:padding="8dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/circleyellow"
-            android:src="@drawable/ic_notificaciones"
-            android:contentDescription="Notifications" />
-
-        <ImageView
-            android:id="@+id/options"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:padding="8dp"
-            android:layout_toStartOf="@id/menuIcon"
-            android:layout_centerVertical="true"
-            android:background="@drawable/circleyellow"
-            android:src="@drawable/ic_tres_rayitas"
-            android:contentDescription="Menu" />
-    </RelativeLayout>
+        android:layout_height="wrap_content"/>
 
     <!-- Contenedor principal de contenido -->
     <LinearLayout

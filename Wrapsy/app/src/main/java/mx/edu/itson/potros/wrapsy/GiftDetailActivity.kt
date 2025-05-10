@@ -80,10 +80,10 @@ class GiftDetailActivity : BaseActivity() {
 
             addToBasketButton.setOnClickListener {
                 try {
-
                         addToBasket(currentGift)
-                        Toast.makeText(this, "Added to basket!", Toast.LENGTH_SHORT).show()
-
+                    val intent = Intent(this@GiftDetailActivity, BasketActivity::class.java)
+                    startActivity(intent)
+                    Toast.makeText(this, "Going to basket...", Toast.LENGTH_SHORT).show()
                 } catch (e: Exception) {
                     Log.e("GiftDetailActivity", "Error adding to basket", e)
                     Toast.makeText(this, "Error adding to basket: ${e.message}", Toast.LENGTH_SHORT).show()
