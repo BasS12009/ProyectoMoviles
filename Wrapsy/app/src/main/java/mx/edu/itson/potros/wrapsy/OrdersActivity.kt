@@ -36,7 +36,7 @@ class OrdersActivity : BaseActivity() {
     }
 
     private fun loadPurchases(userId: String, status: String, container: LinearLayout) {
-        db.collection("Purchase")
+        db.collection("Purchases")
             .whereEqualTo("userId", userId)
             .whereEqualTo("status", status)
             .get()
@@ -44,7 +44,12 @@ class OrdersActivity : BaseActivity() {
                 if (documents.isEmpty) {
                     showEmptyMessage(container)
                 } else {
-                    val purchases = documents.toObjects(Purchase::class.java)
+                    // Asignar manualmente el ID
+                    val purchases = documents.map {
+                        it.toObject(Purchase::class.java).apply {
+                            id = it.id // <--- Aquí está la corrección
+                        }
+                    }
                     renderPurchases(purchases, container)
                 }
             }
@@ -70,17 +75,20 @@ class OrdersActivity : BaseActivity() {
             tvDeliveryDate.text = "Arriving: ${purchase.estimatedDelivery}"
             tvStatus.text = purchase.status
 
-            // Cargar imagen del primer gift
+            // Cargar imagen del primer gift usando el recurso local
             purchase.giftIds.firstOrNull()?.let { giftId ->
-                db.collection("Gift").document(giftId)
+                db.collection("Gifts").document(giftId)
                     .get()
                     .addOnSuccessListener { document ->
-                        document.getString("imageUrl")?.let { imageUrl ->
-                            Glide.with(this)
-                                .load(imageUrl)
-                                .placeholder(R.drawable.heisenberg_plush)
-                                .into(ivPurchase)
+                        val imageResourceId = document.getLong("imageResourceId")?.toInt() ?: 0
+                        if (imageResourceId != 0) {
+                            ivPurchase.setImageResource(imageResourceId)
+                        } else {
+                            ivPurchase.setImageResource(R.drawable.heisenberg_plush) // Imagen por defecto
                         }
+                    }
+                    .addOnFailureListener {
+                        ivPurchase.setImageResource(R.drawable.heisenberg_plush) // Imagen por defecto en caso de error
                     }
             }
 
