@@ -12,6 +12,7 @@ class BasketCardConfirmationActivity : BaseActivity() {
         setContentView(R.layout.activity_basket_card_confirmation)
 
         setupBottomNavigation()
+        setupTopBarNavigation()
 
         val btnConfirm = findViewById<Button>(R.id.btn_confirm_card)
         btnConfirm.setOnClickListener {

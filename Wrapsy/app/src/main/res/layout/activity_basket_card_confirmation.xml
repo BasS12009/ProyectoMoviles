@@ -21,40 +21,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="15dp"
+
         >
 
-        <LinearLayout
+        <include
+            layout="@layout/top_navigation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="70dp">
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-            <ImageButton
-                android:id="@+id/btn_tres_rayitas"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/circleyellow"
-                android:src="@drawable/ic_tres_rayitas"
-                android:scaleType="center"
-                android:layout_margin="8dp"
-                />
-
-            <ImageButton
-                android:id="@+id/btn_notificaciones"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/circleyellow"
-                android:src="@drawable/ic_notificaciones"
-                android:scaleType="fitCenter"
-                android:padding="5dp"
-                android:layout_margin="8dp"/>
-        </LinearLayout>
+            android:layout_height="wrap_content"/>
 
         <ImageView
             android:layout_width="60dp"

@@ -24,6 +24,8 @@ class StoresActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stores)
 
+
+
         giftsDAO = GiftsDAO()
         categoriesMap = mutableMapOf()
 
@@ -32,25 +34,6 @@ class StoresActivity : BaseActivity() {
     }
 
     private fun setupUI() {
-        // Setup navigation buttons
-        val btnBasket: ImageView = findViewById(R.id.basketIcon)
-        val btnNotification: ImageView = findViewById(R.id.btn_notificaciones)
-        val btnMoreOption: ImageView = findViewById(R.id.options)
-
-        btnBasket.setOnClickListener {
-            val intent = Intent(this, BasketActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnNotification.setOnClickListener {
-            val intent = Intent(this, NotificationsActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnMoreOption.setOnClickListener {
-            val intent = Intent(this, MoreOptions::class.java)
-            startActivity(intent)
-        }
 
         // Set up category navigation buttons with IMPROVED category names
         findViewById<TextView>(R.id.btn_details).setOnClickListener {
@@ -74,6 +57,8 @@ class StoresActivity : BaseActivity() {
         }
 
         setupBottomNavigation()
+        setupTopBarNavigation()
+
         setSelectedItem(R.id.nav_stores)
     }
 

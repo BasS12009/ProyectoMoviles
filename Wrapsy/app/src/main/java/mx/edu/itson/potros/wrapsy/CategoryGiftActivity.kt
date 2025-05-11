@@ -30,6 +30,8 @@ class CategoryGiftActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category_gift)
 
+        setupBottomNavigation()
+
 
         gridView = findViewById(R.id.gifts_category)
         emptyView = findViewById(R.id.empty_view)
