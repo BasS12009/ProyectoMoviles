@@ -51,7 +51,7 @@ class ProfileListInfoActivity : BaseActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Handle the error
+
             }
         })
 
@@ -70,7 +70,7 @@ class ProfileListInfoActivity : BaseActivity() {
                     val priceText = view.findViewById<TextView>(R.id.product_price).text.toString()
                     val price = priceText.replace("$", "").toIntOrNull() ?: 0
 
-                    // Create JSON object for each product
+
                     val productJSON = org.json.JSONObject()
                     productJSON.put("name", name)
                     productJSON.put("price", price)
