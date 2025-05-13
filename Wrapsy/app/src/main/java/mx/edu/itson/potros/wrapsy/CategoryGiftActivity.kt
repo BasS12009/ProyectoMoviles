@@ -3,8 +3,11 @@ package mx.edu.itson.potros.wrapsy
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.GridView
 import android.widget.TextView
 import android.widget.Toast
@@ -19,14 +22,20 @@ class CategoryGiftActivity : BaseActivity() {
     private lateinit var gridView: GridView
     private lateinit var category: String
     private lateinit var emptyView: TextView
+    private lateinit var searchBar: EditText
+    private var originalGiftList: MutableList<Gift> = mutableListOf()
+    private lateinit var adapter: CategoryGiftAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category_gift)
 
+        setupBottomNavigation()
+
 
         gridView = findViewById(R.id.gifts_category)
         emptyView = findViewById(R.id.empty_view)
+        searchBar = findViewById(R.id.search_bar)
         giftsDAO = GiftsDAO()
 
         // Get the category from intent
@@ -53,6 +62,43 @@ class CategoryGiftActivity : BaseActivity() {
 
         // Load gifts for this category
         loadCategoryGifts()
+
+        searchBar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterGifts(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
+    }
+
+    private fun filterGifts(query: String) {
+        val filteredList = if (query.isEmpty()) {
+            originalGiftList
+        } else {
+            originalGiftList.filter { gift ->
+
+                gift.name.contains(query, ignoreCase = true)
+            }
+        }
+        adapter.clear()
+        adapter.addAll(filteredList)
+        adapter.notifyDataSetChanged()
+
+        if (filteredList.isEmpty()) {
+            emptyView.text = "No se encontraron productos con ese nombre"
+            emptyView.visibility = View.VISIBLE
+            gridView.visibility = View.GONE
+        } else {
+            emptyView.visibility = View.GONE
+            gridView.visibility = View.VISIBLE
+        }
     }
 
     private fun setCategoryTitle(category: String) {
@@ -71,26 +117,34 @@ class CategoryGiftActivity : BaseActivity() {
 
 
     private fun loadCategoryGifts() {
-        // Show a loading message
         emptyView.text = "Cargando..."
         emptyView.visibility = View.VISIBLE
 
         giftsDAO.getGiftsByCategory(category) { gifts ->
             if (gifts.isNotEmpty()) {
-                // Hide the empty view
                 emptyView.visibility = View.GONE
-
-                // Set up the adapter with the gifts
-                val adapter = CategoryGiftAdapter(this, gifts.toMutableList())
+                originalGiftList.addAll(gifts)
+                adapter = CategoryGiftAdapter(this, originalGiftList.toMutableList())
                 gridView.adapter = adapter
 
-                // Set up click listener for items
                 gridView.setOnItemClickListener { _, _, position, _ ->
                     val gift = adapter.getItem(position) as Gift
                     navigateToGiftDetail(gift)
                 }
+
+                searchBar.addTextChangedListener(object : TextWatcher {
+                    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                    }
+
+                    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                        filterGifts(s.toString())
+                    }
+
+                    override fun afterTextChanged(s: Editable?) {
+                    }
+                })
+
             } else {
-                // Show a message if no gifts were found
                 emptyView.text = "No se encontraron productos en esta categoría"
                 emptyView.visibility = View.VISIBLE
                 gridView.visibility = View.GONE

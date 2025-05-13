@@ -43,7 +43,7 @@ class BasketTotalActivity : BaseActivity() {
         getBasketItems()
 
         btnConfirm.setOnClickListener {
-            val intent = Intent(this, BasketCardConfirmationActivity::class.java)
+            val intent = Intent(this, BasketCardInformationActivity::class.java)
             startActivity(intent)
         }
     }
@@ -57,15 +57,15 @@ class BasketTotalActivity : BaseActivity() {
     private fun getBasketItems() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         currentUser?.let { user ->
-            db.collection("basket")
-                .whereEqualTo("user_id", user.uid)
+            db.collection("Basket")
+                .whereEqualTo("userId", user.uid)
                 .get()
                 .addOnSuccessListener { documents ->
                     if (documents.isEmpty) {
                         showEmptyBasket()
                     } else {
                         val basket = documents.first()
-                        val giftIds = basket.get("gift_ids") as? List<String> ?: emptyList()
+                        val giftIds = basket.get("giftIds") as? List<String> ?: emptyList()
                         loadGifts(giftIds)
                     }
                 }

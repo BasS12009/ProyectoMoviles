@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
+import mx.edu.itson.potros.wrapsy.DAOs.GiftsDAO
 import mx.edu.itson.potros.wrapsy.Entities.Gift
 import mx.edu.itson.potros.wrapsy.Entities.Purchase
 
@@ -14,14 +15,13 @@ class OrderDetailsActivity : BaseActivity() {
 
     private lateinit var llGifts: LinearLayout
     private val db = FirebaseFirestore.getInstance()
+    private val giftsDao = GiftsDAO()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_details)
 
         setupBottomNavigation()
-        setupTopBarNavigation()
-        setSelectedItem(R.id.nav_orders)
 
         llGifts = findViewById(R.id.ll_gifts)
         val purchaseId = intent.getStringExtra("PURCHASE_ID") ?: run {
@@ -34,7 +34,7 @@ class OrderDetailsActivity : BaseActivity() {
     }
 
     private fun loadPurchaseDetails(purchaseId: String) {
-        db.collection("Purchase").document(purchaseId)
+        db.collection("Purchases").document(purchaseId)
             .get()
             .addOnSuccessListener { document ->
                 if (document.exists()) {
@@ -55,7 +55,6 @@ class OrderDetailsActivity : BaseActivity() {
     }
 
     private fun updateUI(purchase: Purchase) {
-        // Actualizar detalles principales
         findViewById<TextView>(R.id.tv_status_detail).text = "Status: ${purchase.status}"
         findViewById<TextView>(R.id.tv_order_number).text = "Order #${purchase.orderNumber}"
         findViewById<TextView>(R.id.tv_quantity).text = "Items: ${purchase.quantity}"
@@ -63,67 +62,51 @@ class OrderDetailsActivity : BaseActivity() {
         findViewById<TextView>(R.id.tv_estimated_delivery).text = "Delivery: ${purchase.estimatedDelivery}"
         findViewById<TextView>(R.id.tv_total_cost).text = "Total: $${"%.2f".format(purchase.totalCost)}"
 
-        // Color del estado
+        // Colores directos con códigos HEX
         val statusColor = when(purchase.status) {
-            "Shipped" -> "#4CAF50"  // Verde
+            "Shipped" -> "#4CAF50"   // Verde
             "Delivered" -> "#9370DB" // Morado
-            else -> "#9E9E9E"         // Gris
+            else -> "#9E9E9E"        // Gris
         }
         findViewById<TextView>(R.id.tv_status_detail).setTextColor(Color.parseColor(statusColor))
     }
 
     private fun loadGifts(giftIds: List<String>) {
         llGifts.removeAllViews()
-
         if (giftIds.isEmpty()) {
             showEmptyMessage()
             return
         }
 
-        db.collection("Gift")
-            .whereIn("__name__", giftIds)
-            .get()
-            .addOnSuccessListener { result ->
-                val gifts = result.documents.mapNotNull {
-                    it.toObject(Gift::class.java)?.apply {
-                        id = it.id
-                        // Convertir Long de Firestore a Int
-                        imageResourceId = (it.getLong("imageResourceId")?.toInt()?: 0)
-                    }
-                }
-
-                if (gifts.isNotEmpty()) {
-                    renderGifts(gifts)
-                } else {
-                    showEmptyMessage()
-                }
+        giftsDao.getGiftsByIds(giftIds) { gifts ->
+            if (gifts.isNotEmpty()) {
+                renderGifts(gifts)
+            } else {
+                showEmptyMessage()
             }
-            .addOnFailureListener {
-                showErrorMessage("Failed to load gifts", "#FF0000")
-            }
+        }
     }
 
     private fun renderGifts(gifts: List<Gift>) {
         val inflater = LayoutInflater.from(this)
-
         gifts.forEach { gift ->
             val giftView = inflater.inflate(R.layout.item_purchased_gift, llGifts, false)
 
-            // Configurar vistas
             giftView.findViewById<TextView>(R.id.tv_gift_name).text = gift.name
             giftView.findViewById<TextView>(R.id.tv_price).text = "$${"%.2f".format(gift.price)}"
 
-            // Cargar imagen desde recursos locales
+            // Glide sin manejo de errores
             Glide.with(this)
-                .load(gift.imageResourceId)  // ID de recurso drawable
+                .load(gift.imageResourceId)
                 .placeholder(R.drawable.heisenberg_plush)
-                .into(giftView.findViewById(R.id.iv_purchase))
+                .into(giftView.findViewById(R.id.iv_purchase_picture))
 
             llGifts.addView(giftView)
         }
     }
 
     private fun showEmptyMessage() {
+        llGifts.removeAllViews()
         val textView = TextView(this).apply {
             text = "No gifts in this order"
             textSize = 16f
@@ -134,6 +117,7 @@ class OrderDetailsActivity : BaseActivity() {
     }
 
     private fun showErrorMessage(message: String, colorHex: String) {
+        llGifts.removeAllViews()
         val textView = TextView(this).apply {
             text = message
             textSize = 16f

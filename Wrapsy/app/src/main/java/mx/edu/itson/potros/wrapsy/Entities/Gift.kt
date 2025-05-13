@@ -25,7 +25,15 @@ data class Gift(
     }
 
     companion object {
-        // Conversión desde un DocumentSnapshot
+        fun fromMap(map: Map<String, Any>): Gift {
+            return Gift(
+                name = map["name"] as? String ?: "",
+                description = map["description"] as String,
+                imageResourceId = map["imageResourceId"] as Int
+
+            )
+        }
+
         fun fromDocumentSnapshot(snapshot: DocumentSnapshot): Gift {
             return Gift().apply {
                 id = snapshot.id
@@ -38,4 +46,6 @@ data class Gift(
             }
         }
     }
+
+
 }

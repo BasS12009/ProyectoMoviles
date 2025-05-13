@@ -1,5 +1,6 @@
 package mx.edu.itson.potros.wrapsy
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -91,8 +92,23 @@ class GiftDetailActivity : BaseActivity() {
             }
 
             saveItemLink.setOnClickListener {
-                Toast.makeText(this, "Item saved!", Toast.LENGTH_SHORT).show()
+                currentGift?.let { gift ->
+                    Log.d(TAG, "Clic en saveItemLink para el Gift con ID: ${gift.id}")
+                    val intent = Intent(this@GiftDetailActivity, SaveItemActivity::class.java)
+
+                    val giftId = gift.id
+                    intent.putExtra("GIFT_ID", giftId)
+                    Log.d(TAG, "Se añadió el ID del Gift al Intent: $giftId")
+
+                    startActivity(intent)
+                    Log.d(TAG, "Se inició SaveItemActivity")
+
+                } ?: run {
+                    Log.w(TAG, "No se pudo obtener la información del regalo al hacer clic en saveItemLink")
+                    Toast.makeText(this@GiftDetailActivity, "No se pudo obtener la información del regalo.", Toast.LENGTH_SHORT).show()
+                }
             }
+
 
             Log.d("GiftDetailActivity", "Views initialized successfully")
         } catch (e: Exception) {
