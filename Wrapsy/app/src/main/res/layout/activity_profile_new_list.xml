@@ -108,8 +108,8 @@ tools:context=".ProfileNewList">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btn_confirm"
@@ -117,9 +117,9 @@ tools:context=".ProfileNewList">
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/bottom_nav"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="#707B65"
-                android:layout_marginTop="70dp"
                 android:text="Confirm"
                 android:textColor="#FFFFFFFF" />
         </LinearLayout>
